@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cimmerian Crane Services — Overhead Cranes &amp; Hoists Singapore</title>
+<meta name="description" content="Leading provider of German Engineered overhead crane equipment and services in Singapore. Sole distributor of ABUS crane systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          yellow: '#F5C100',
+          'yellow-dk': '#D4A800',
+          'yellow-lt': '#FFF3CC',
+          blue: '#1A6BB5',
+          'blue-dk': '#0F4A82',
+          'blue-lt': '#D4E6F5',
+          'off-white': '#F0EDE6',
+          ink: '#141414',
+          'ink-soft': '#4A4A4A',
+          stone: '#E8E4DA',
+          cream: '#F8F6F0',
+          'stone-dark': '#D5D0C4',
+        },
+        fontFamily: {
+          display: ['Barlow Condensed', 'sans-serif'],
+          body: ['DM Sans', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root {
+  --col-yellow: #F5C100;
+  --col-yellow-dk: #D4A800;
+  --col-yellow-lt: #FFF3CC;
+  --col-blue: #1A6BB5;
+  --col-blue-dk: #0F4A82;
+  --col-blue-lt: #D4E6F5;
+  --col-white: #FFFFFF;
+  --col-off-white: #F0EDE6;
+  --col-ink: #141414;
+  --col-ink-soft: #4A4A4A;
+  --col-border: rgba(20,20,20,0.10);
+  --col-stone: #E8E4DA;
+  --col-cream: #F8F6F0;
+  --col-stone-dark: #D5D0C4;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'DM Sans', sans-serif; background: var(--col-off-white); color: var(--col-ink-soft); line-height: 1.72; overflow-x: hidden; }
+
+/* ===== View system ===== */
+.view { display: none; }
+.view--active { display: block; opacity: 1; }
+
+/* View entrance animations */
+.view--active .section-heading {
+  animation: fadeUp 480ms cubic-bezier(0.4,0,0.2,1) both;
+}
+.view--active .section-sub {
+  animation: fadeUp 480ms cubic-bezier(0.4,0,0.2,1) 80ms both;
+}
+.view--active .stagger-card:nth-child(1) { animation: fadeScale 480ms cubic-bezier(0.34,1.56,0.64,1) 120ms both; }
+.view--active .stagger-card:nth-child(2) { animation: fadeScale 480ms cubic-bezier(0.34,1.56,0.64,1) 180ms both; }
+.view--active .stagger-card:nth-child(3) { animation: fadeScale 480ms cubic-bezier(0.34,1.56,0.64,1) 240ms both; }
+.view--active .stagger-card:nth-child(4) { animation: fadeScale 480ms cubic-bezier(0.34,1.56,0.64,1) 300ms both; }
+.view--active .stagger-card:nth-child(5) { animation: fadeScale 480ms cubic-bezier(0.34,1.56,0.64,1) 360ms both; }
+.view--active .stagger-card:nth-child(6) { animation: fadeScale 480ms cubic-bezier(0.34,1.56,0.64,1) 420ms both; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeScale {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Scroll reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 480ms cubic-bezier(0.34,1.56,0.64,1),
+              transform 480ms cubic-bezier(0.34,1.56,0.64,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== SVG Noise Grain ===== */
+.grain-overlay {
+  position: relative;
+  isolation: isolate;
+}
+.grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  filter: url(#grain);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== Typography ===== */
+.hero-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--col-ink);
+}
+.section-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--col-ink);
+}
+.card-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--col-ink);
+}
+.body-text {
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--col-ink-soft);
+}
+
+/* ===== Yellow underline animation on hero keyword ===== */
+.hero-keyword-underline {
+  display: inline-block;
+  border-bottom: 5px solid var(--col-yellow);
+  animation: underlineIn 800ms cubic-bezier(0.4,0,0.2,1) 200ms both;
+}
+@keyframes underlineIn {
+  from { border-bottom-width: 0; }
+  to { border-bottom-width: 5px; }
+}
+
+/* ===== Nav ===== */
+#navbar {
+  backdrop-filter: blur(0px);
+  background: rgba(240,237,230,0.96);
+  border-bottom: 1px solid var(--col-border);
+  transition: backdrop-filter 240ms ease, border-color 240ms ease, background 240ms ease;
+}
+#navbar.scrolled {
+  backdrop-filter: blur(12px);
+  background: rgba(248,246,240,0.95);
+  border-bottom-color: var(--col-yellow);
+}
+
+.nav-link {
+  position: relative;
+  color: var(--col-ink-soft);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--col-yellow);
+  transition: width 240ms ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link:hover {
+  color: var(--col-ink);
+}
+.nav-link.is-active {
+  color: var(--col-ink);
+}
+.nav-link.is-active::after {
+  width: 100%;
+}
+
+/* ===== Hamburger ===== */
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--col-ink);
+  transition: transform 240ms ease, opacity 240ms ease;
+}
+.hamburger-menu-open .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger-menu-open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu-open .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--col-blue-dk);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 320ms cubic-bezier(0.4,0,0.2,1);
+}
+.mobile-menu-overlay.is-open {
+  transform: translateX(0);
+}
+
+/* ===== CTA button ===== */
+.btn-primary {
+  background: var(--col-yellow);
+  color: var(--col-ink);
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  padding: 14px 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9375rem;
+  transition: background 200ms ease, transform 200ms cubic-bezier(0.34,1.56,0.64,1), opacity 200ms ease;
+}
+.btn-primary:hover {
+  background: var(--col-yellow-dk);
+  transform: scale(1.03);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--col-ink);
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  padding: 13px 31px;
+  border-radius: 6px;
+  border: 1.5px solid currentColor;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9375rem;
+  transition: background 200ms ease, border-color 200ms ease, transform 200ms cubic-bezier(0.34,1.56,0.64,1), opacity 200ms ease;
+}
+.btn-ghost:hover {
+  background: var(--col-yellow-lt);
+  border-color: var(--col-yellow);
+  transform: scale(1.03);
+}
+.btn-ghost:active {
+  transform: scale(0.97);
+}
+
+/* ===== Cards ===== */
+.product-card {
+  background: var(--col-cream);
+  border-radius: 16px;
+  border: 0.5px solid rgba(20,20,20,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 320ms cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow 320ms ease,
+              border-color 320ms ease;
+  border-left: 0 solid transparent;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10), 0 24px 64px rgba(0,0,0,0.12);
+  border-left-color: var(--col-yellow);
+  border-left-width: 4px;
+}
+
+.card-image-wrap {
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: var(--col-off-white);
+  transition: transform 600ms ease;
+}
+.product-card:hover .card-image-wrap img {
+  transform: scale(1.06);
+}
+
+/* ===== Quick nav tiles ===== */
+.quick-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 320ms cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow 320ms ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.08);
+  text-decoration: none;
+}
+.quick-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10), 0 24px 64px rgba(0,0,0,0.12);
+}
+.quick-tile:active {
+  transform: translateY(-1px) scale(0.99);
+}
+.quick-tile:focus-visible {
+  outline: 3px solid var(--col-yellow);
+  outline-offset: 3px;
+}
+.quick-tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+.quick-tile:hover .quick-tile-image {
+  transform: scale(1.08);
+}
+.quick-tile-arrow {
+  transition: transform 240ms ease;
+}
+.quick-tile:hover .quick-tile-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* ===== Focus states ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--col-yellow);
+  outline-offset: 2px;
+}
+
+/* ===== Form fields ===== */
+.form-field {
+  width: 100%;
+  background: var(--col-cream);
+  border: 1px solid var(--col-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--col-ink);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.form-field:focus {
+  outline: none;
+  border: 2px solid var(--col-yellow);
+  box-shadow: 0 0 0 3px rgba(245,193,0,0.15);
+}
+
+/* ===== Service list (desktop) ===== */
+.service-list-item {
+  padding: 16px 20px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: border-color 200ms ease, background 200ms ease, font-weight 100ms ease;
+  font-weight: 500;
+  color: var(--col-ink-soft);
+}
+.service-list-item:hover {
+  background: var(--col-off-white);
+}
+.service-list-item.is-active {
+  border-left-color: var(--col-yellow);
+  font-weight: 700;
+  color: var(--col-ink);
+  background: rgba(245,193,0,0.06);
+}
+
+/* Service detail panels — hidden by default */
+.service-detail-panel {
+  display: none;
+}
+.service-detail-panel.is-active {
+  display: block;
+}
+
+/* ===== Mobile accordion ===== */
+.accordion-item {
+  border: 0.5px solid var(--col-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--col-cream);
+}
+.accordion-header {
+  padding: 16px 20px;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+.accordion-chevron {
+  transition: transform 240ms ease;
+}
+.accordion-item.is-open .accordion-chevron {
+  transform: rotate(180deg);
+}
+.accordion-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms cubic-bezier(0.4,0,0.2,1), opacity 320ms ease;
+  opacity: 0;
+  padding: 0 20px;
+}
+.accordion-item.is-open .accordion-details {
+  max-height: 400px;
+  opacity: 1;
+  padding: 0 20px 20px 20px;
+}
+
+/* ===== Category filter pills ===== */
+.filter-pill {
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1px solid var(--col-border);
+  background: var(--col-cream);
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--col-ink-soft);
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms cubic-bezier(0.34,1.56,0.64,1);
+}
+.filter-pill:hover {
+  transform: scale(1.04);
+}
+.filter-pill.is-active {
+  background: var(--col-yellow);
+  border-color: var(--col-yellow);
+  color: var(--col-ink);
+  font-weight: 700;
+}
+
+/* ===== Yellow section grain ===== */
+.yellow-grain {
+  position: relative;
+  isolation: isolate;
+}
+.yellow-grain > .grain {
+  position: absolute;
+  inset: 0;
+  filter: url(#grain);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== Stat counter ===== */
+.stat-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--col-ink);
+  line-height: 1;
+}
+
+/* ===== Contact detail icon dot ===== */
+.accent-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--col-blue);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+/* ===== Hero geometric frame ===== */
+.hero-geometric {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--col-stone);
+}
+.hero-geometric::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border: 4px solid var(--col-yellow);
+  border-radius: 20px;
+  z-index: 0;
+}
+.hero-geometric img {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Success message ===== */
+.success-msg {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+.success-msg.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Utility ===== */
+@media (max-width: 767px) {
+  .hide-mobile { display: none; }
+}
+@media (min-width: 768px) {
+  .hide-desktop { display: none; }
+}
+
+/* ===== Brand Mark ===== */
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.brand-mark__shield {
+  height: 46px;
+  width: 46px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-mark__img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.brand-mark__wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+}
+.brand-mark__line1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  color: var(--col-ink);
+}
+.brand-mark__line2 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--col-ink-soft);
+}
+/* Nav context — on light background */
+.nav-bar .brand-mark__shield { height: 55px; width: 55px; }
+.nav-bar .brand-mark__line1 { font-size: 1.56rem; color: var(--col-ink); }
+.nav-bar .brand-mark__line2 { font-size: 0.7rem; color: var(--col-ink-soft); }
+/* Hero context — on light background */
+.hero-section .brand-mark__line1 { color: var(--col-ink); }
+.hero-section .brand-mark__line2 { color: var(--col-ink-soft); }
+/* About context — on light background */
+.about-brand .brand-mark { gap: 14px; }
+.about-brand .brand-mark__shield { height: 64px; width: 64px; }
+.about-brand .brand-mark__line1 { font-size: 1.7rem; }
+.about-brand .brand-mark__line2 { font-size: 0.65rem; letter-spacing: 0.3em; }
+/* Footer context — on dark ink background */
+.site-footer .brand-mark__shield { height: 83px; width: 83px; }
+.site-footer .brand-mark__line1 { font-size: 2.37rem; color: #FFFFFF; }
+.site-footer .brand-mark__line2 { font-size: 1.05rem; color: rgba(255,255,255,0.5); }
+
+/* ===== SVG Illustrations ===== */
+@keyframes svgDraw {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+.svg-illus path,
+.svg-illus line,
+.svg-illus rect,
+.svg-illus circle,
+.svg-illus polyline,
+.svg-illus ellipse {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.svg-illus.is-visible path,
+.svg-illus.is-visible line,
+.svg-illus.is-visible rect,
+.svg-illus.is-visible circle,
+.svg-illus.is-visible polyline,
+.svg-illus.is-visible ellipse {
+  animation: svgDraw 1400ms cubic-bezier(0.4,0,0.2,1) forwards;
+}
+.svg-illus.is-visible *:nth-child(2) { animation-delay: 80ms; }
+.svg-illus.is-visible *:nth-child(3) { animation-delay: 160ms; }
+.svg-illus.is-visible *:nth-child(4) { animation-delay: 240ms; }
+.svg-illus.is-visible *:nth-child(5) { animation-delay: 320ms; }
+.svg-illus.is-visible *:nth-child(6) { animation-delay: 400ms; }
+.svg-illus.is-visible *:nth-child(7) { animation-delay: 480ms; }
+.svg-illus.is-visible *:nth-child(8) { animation-delay: 560ms; }
+.svg-illus.is-visible *:nth-child(9) { animation-delay: 640ms; }
+
+/* ===== Illustration caption ===== */
+.illustration-caption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--col-ink);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ===== Link underline on hover ===== */
+.link-underline {
+  color: var(--col-blue);
+  text-decoration: none;
+  transition: text-decoration 150ms ease;
+}
+.link-underline:hover {
+  text-decoration: underline;
+}
+.illustration-caption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--col-ink);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ===== Brand cards ===== */
+.brand-card {
+  background: var(--col-white);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  border: 0.5px solid rgba(20,20,20,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.08);
+  transition: transform 320ms cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow 320ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10), 0 16px 48px rgba(0,0,0,0.10);
+}
+.brand-card-logo {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--col-ink);
+  letter-spacing: 0.05em;
+}
+.brand-card-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--col-ink);
+  margin-bottom: 4px;
+}
+.brand-card-desc {
+  font-size: 0.875rem;
+  color: var(--col-ink-soft);
+}
+</style>
+</head>
+<body>
+
+<!-- SVG Noise Def (hidden) -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="overlay" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-bar">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="#" class="brand-mark nav-bar" data-nav="home" aria-label="Cimmerian Crane Services - Home">
+        <div class="brand-mark__shield">
+          <img src="assets/Cimmerian_Logo_nobg.png"
+               alt=""
+               class="brand-mark__img"
+               aria-hidden="true">
+        </div>
+        <div class="brand-mark__wordmark">
+          <span class="brand-mark__line1">CIMMERIAN</span>
+          <span class="brand-mark__line2">CRANE SERVICES</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#" class="nav-link is-active" data-nav="home">Home</a>
+        <a href="#" class="nav-link" data-nav="cranes">Cranes</a>
+        <a href="#" class="nav-link" data-nav="hoists">Hoists</a>
+        <a href="#" class="nav-link" data-nav="services">Services</a>
+        <a href="#" class="nav-link" data-nav="about">About</a>
+        <a href="#" class="nav-link" data-nav="contact">Contact</a>
+        <a href="#" class="btn-primary" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Request a Quote</a>
+      </div>
+
+      <!-- Hamburger button -->
+      <button id="hamburgerBtn" class="lg:hidden flex flex-col items-center justify-center gap-[6px] p-2" style="min-height:44px;min-width:44px;" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div id="mobileMenu" class="mobile-menu-overlay">
+  <nav class="flex flex-col items-center gap-6">
+    <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="home">Home</a>
+    <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="cranes">Cranes</a>
+    <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="hoists">Hoists</a>
+    <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="services">Services</a>
+    <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="about">About</a>
+    <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="contact">Contact</a>
+    <a href="#" class="btn-primary mt-4" data-mobile-nav="contact">Request a Quote</a>
+  </nav>
+</div>
+
+<!-- ============================================================ -->
+<!-- VIEW: HOME                                                     -->
+<!-- ============================================================ -->
+<section id="view-home" class="view view--active" data-view="home">
+
+  <!-- Hero -->
+  <div class="min-h-screen flex items-center" style="padding-top:80px;">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-6 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-3 hero-text-section">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="block w-8 h-px" style="background:var(--col-yellow);"></span>
+            <span class="font-display font-bold text-sm tracking-[0.25em] uppercase" style="color:var(--col-yellow);">Overhead Cranes &amp; Hoists</span>
+          </div>
+
+          <h1 class="hero-heading mb-6">
+            OVERHEAD<br>CRANE<br>
+            <span class="hero-keyword-underline">SOLUTIONS</span>
+          </h1>
+
+          <p class="body-text mb-8 max-w-xl">
+            Cimmerian Crane supplies a wide range of high-quality overhead cranes, equipment and complementary services in Singapore. We are able to provide customised solutions for your material lifting needs.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#" class="btn-primary" data-nav="contact">Get a Quote Now</a>
+            <a href="#" class="btn-ghost" data-nav="services">Our Services</a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3 hidden lg:block">
+          <div class="hero-geometric">
+            <img src="assets/IMAGES/476824610_1137533931400792_6034393920170034294_n.jpg" alt="ABUS Crane System" class="w-full h-full" style="display:block;border-radius:16px;object-fit:cover;min-height:420px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats row inside hero area -->
+      <div class="grid grid-cols-3 gap-6 md:gap-12 mt-16 mb-8 max-w-2xl">
+        <div class="reveal">
+          <div class="stat-number" data-count="30">0</div>
+          <div class="text-sm mt-1 tracking-wide uppercase font-bold" style="color:var(--col-ink);">Years Established</div>
+        </div>
+        <div class="reveal">
+          <div class="stat-number" data-count="100">0</div>
+          <div class="text-sm mt-1 tracking-wide uppercase font-bold" style="color:var(--col-ink);">Combined Team Experience (yrs)</div>
+        </div>
+        <div class="reveal">
+            <div class="stat-number"><span class="counter" data-count="3">0</span><span>hr</span></div>
+          <div class="text-sm mt-1 tracking-wide uppercase font-bold" style="color:var(--col-ink);">Max Response Time</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Yellow stats band -->
+  <div class="yellow-grain" style="background:var(--col-yellow);">
+    <div class="grain"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16" style="position:relative;z-index:2;">
+      <div class="text-center mb-10 reveal">
+        <h2 class="section-heading" style="color:var(--col-ink);">Built on Experience</h2>
+      </div>
+      <!-- We already show stats above; this band serves as visual emphasis -->
+      <p class="body-text text-center max-w-2xl mx-auto" style="color:var(--col-ink);">
+        With a proven track record of 30 years supplying high-quality products and delivering high-level service standards, you are assured of a seamless customer experience right from your enquiry to equipment delivery and after-sales service.
+      </p>
+    </div>
+  </div>
+
+  <!-- Quick-nav tiles -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Cranes tile -->
+      <a href="#products" class="quick-tile" style="height:280px;" data-nav="cranes">
+        <img src="assets/IMAGES/510470920_24612541661681714_3602699321719799358_n.jpg" alt="Cranes" class="quick-tile-image w-full h-full object-cover">
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(20,20,20,0.75) 0%,rgba(20,20,20,0.1) 60%);"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <h3 class="font-display font-bold text-2xl text-white tracking-wide">Cranes</h3>
+          <p class="text-sm text-white/80 mt-1">Overhead, jib &amp; mobile gantry cranes</p>
+        </div>
+        <div class="absolute bottom-6 right-6">
+          <svg class="quick-tile-arrow w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#F5C100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </div>
+      </a>
+      <!-- Hoists tile -->
+      <a href="#" class="quick-tile" style="height:280px;" data-nav="hoists">
+        <img src="assets/IMAGES/ABUS-Electric%20Chain%20Hoist%202.jpg" alt="Hoists" class="quick-tile-image w-full h-full object-cover">
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(20,20,20,0.75) 0%,rgba(20,20,20,0.1) 60%);"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <h3 class="font-display font-bold text-2xl text-white tracking-wide">Hoists</h3>
+          <p class="text-sm text-white/80 mt-1">Wire rope, chain &amp; HB systems</p>
+        </div>
+        <div class="absolute bottom-6 right-6">
+          <svg class="quick-tile-arrow w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#F5C100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </div>
+      </a>
+      <!-- Services tile -->
+      <a href="#" class="quick-tile" style="height:280px;" data-nav="services">
+        <img src="assets/IMAGES/515949212_24738406609095218_2916188097253458783_n.jpg" alt="Services" class="quick-tile-image w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <h3 class="font-display font-bold text-2xl text-white tracking-wide">Services</h3>
+          <p class="text-sm text-white/80 mt-1">Repair, testing, relocation &amp; more</p>
+        </div>
+        <div class="absolute bottom-6 right-6">
+          <svg class="quick-tile-arrow w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#F5C100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </div>
+      </a>
+      <!-- About tile -->
+      <a href="#" class="quick-tile" style="height:280px;" data-nav="about">
+        <img src="assets/IMAGES/516592082_24738406232428589_4104805460922751093_n.jpg" alt="About Cimmerian Crane Services" class="quick-tile-image w-full h-full object-cover">
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(20,20,20,0.75) 0%,rgba(20,20,20,0.1) 60%);"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <h3 class="font-display font-bold text-2xl text-white tracking-wide">About</h3>
+          <p class="text-sm text-white/80 mt-1">30+ years of crane solutions</p>
+        </div>
+        <div class="absolute bottom-6 right-6">
+          <svg class="quick-tile-arrow w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#F5C100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Company intro strip (cobalt blue) -->
+  <div class="py-12 lg:py-16" style="background:var(--col-blue-lt);">
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center reveal">
+      <span class="w-12 h-px inline-block" style="background:var(--col-blue);"></span>
+      <h3 class="font-display font-bold text-2xl mt-4 mb-6" style="color:var(--col-blue-dk);">Your Overhead Crane Solution Provider</h3>
+      <p class="body-text max-w-2xl mx-auto" style="color:var(--col-blue-dk);">
+        Cimmerian Crane Services is your overhead crane supplier, providing an extensive range of overhead crane equipment of various specifications from electric overhead traveling cranes and mobile gantry cranes, to electric chain hoists and cable reels. Our partnership with leading manufacturers offers customer tailor-made solutions for efficient material handling and individual service from design through to maintenance.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- VIEW: CRANES                                                   -->
+<!-- ============================================================ -->
+<section id="view-cranes" class="view" data-view="cranes">
+
+  <!-- Yellow header band -->
+  <div class="yellow-grain" style="background:var(--col-yellow);padding-top:100px;padding-bottom:40px;">
+    <div class="grain"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8" style="position:relative;z-index:2;">
+      <nav class="text-sm mb-4" style="color:var(--col-ink);">
+        <a href="#" data-nav="home" class="hover:underline">Home</a> <span>/</span> Cranes
+      </nav>
+      <h1 class="section-heading" style="color:var(--col-ink);">Cranes</h1>
+      <p class="body-text mt-4 max-w-3xl">
+        Here at Cimmerian Crane, we offer a wide range of cranes from various brands to meet your needs. Our consultants have years of experience in this industry and we will be able to recommend the best type of crane for you.
+      </p>
+    </div>
+  </div>
+
+  <!-- Category filter pills -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-wrap gap-3" id="crane-filters">
+      <button class="filter-pill is-active" data-filter="all">All Cranes</button>
+      <button class="filter-pill" data-filter="gantry">Mobile Gantry</button>
+      <button class="filter-pill" data-filter="overhead">Overhead Crane</button>
+      <button class="filter-pill" data-filter="jib">Jib Crane</button>
+    </div>
+  </div>
+
+  <!-- Product grid -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-24">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="products">
+
+      <!-- Lightweight Mobile Gantry -->
+      <div class="product-card stagger-card" data-category="gantry">
+        <div class="card-image-wrap">
+          <img src="assets/IMAGES/ABUS-LightWeight%20Mobile%20Gantry.jpg" alt="Lightweight Mobile Gantry Crane">
+          <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Mobile Gantry</span>
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Lightweight Mobile Gantry</h3>
+          <p class="body-text mb-4">When a permanently installed hoist is not necessary but the crane usage is needed at multiple workstations.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 2 tons</li>
+            <li>Portable with 4 steerable stop rollers</li>
+            <li>Lightweight</li>
+            <li>Optional electrical hoist travel or mobile control</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Overhead Travelling Crane -->
+      <div class="product-card stagger-card" data-category="overhead">
+        <div class="card-image-wrap">
+          <img src="assets/IMAGES/ABUS-Overhead%20Travelling%20Crane%201.jpg" alt="Overhead Travelling Crane">
+          <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Overhead Crane</span>
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Overhead Travelling Crane</h3>
+          <p class="body-text mb-4">Suitable for the assembly, storage, transportation and warehousing of heavy and oversized objects.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 120 tons</li>
+            <li>Customisable components</li>
+            <li>4 distinctive systems for different applications</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Jib Crane -->
+      <div class="product-card stagger-card" data-category="jib">
+        <div class="card-image-wrap">
+          <img src="assets/IMAGES/ABUS-JIB%20CRANES%201.jpg" alt="Jib Crane">
+          <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Jib Crane</span>
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Jib Crane</h3>
+          <p class="body-text mb-4">Suitable for lifting and handling objects in small or tight areas.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 6.3 tons SWL</li>
+            <li>Increased mobility due to area of rotation</li>
+            <li>Lightweight and compact</li>
+            <li>Pillar-mounted and wall-mounted types</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- VIEW: HOISTS                                                   -->
+<!-- ============================================================ -->
+<section id="view-hoists" class="view" data-view="hoists">
+
+  <!-- Blue header band -->
+  <div class="yellow-grain" style="background:var(--col-blue-dk);padding-top:100px;padding-bottom:40px;">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <nav class="text-sm mb-4 text-white/70">
+        <a href="#" data-nav="home" class="hover:underline text-white/90">Home</a> <span>/</span> Hoists
+      </nav>
+      <h1 class="section-heading" style="color:var(--col-white);">Hoists</h1>
+      <p class="mt-4 text-lg text-white/80 max-w-3xl">
+        Cimmerian Crane provides a range of hoisting solutions from leading German manufacturers, designed for precision, safety, and performance.
+      </p>
+    </div>
+  </div>
+
+  <!-- Product grid -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 mb-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="hoists">
+
+      <!-- Wire Rope Hoist -->
+      <div class="product-card stagger-card">
+        <div class="card-image-wrap">
+          <img src="assets/IMAGES/ABUS-Wire%20Rope%20Hoist%201.jpg" alt="Wire Rope Hoist">
+          <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Wire Rope</span>
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Wire Rope Hoist</h3>
+          <p class="body-text mb-4">Compact design, available as Type E (Monorail Hoist) and Type S (Side-Mounted Hoist).</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 12.5 tons SWL</li>
+            <li>Compact design</li>
+            <li>Type E — Monorail Hoist</li>
+            <li>Type S — Side-Mounted Hoist</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Electric Chain Hoist -->
+      <div class="product-card stagger-card">
+        <div class="card-image-wrap">
+          <img src="assets/IMAGES/ABUS-Electric%20Chain%20Hoist%201.jpg" alt="Electric Chain Hoist">
+          <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Chain Hoist</span>
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Electric Chain Hoist</h3>
+          <p class="body-text mb-4">Available as ABUCompact GMC and ABUCompact GM2 models.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 4 tons SWL</li>
+            <li>Lifting speed up to 20m/min for hook paths up to 50m</li>
+            <li>Lightweight and compact</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
+        </div>
+      </div>
+
+      <!-- HB System -->
+      <div class="product-card stagger-card">
+        <div class="card-image-wrap">
+          <img src="assets/IMAGES/ABUS-HB%20System%201.jpg" alt="ABUS HB System">
+          <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">HB System</span>
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">HB System</h3>
+          <p class="body-text mb-4">Low build systems that are adjustable in height. Monorail ESB and Double Rail System ZSB available.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 2 tons SWL</li>
+            <li>Low build, height-adjustable</li>
+            <li>Optional electric hoist travel and mobile control</li>
+            <li>Monorail ESB and Double Rail System ZSB</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- VIEW: SERVICES                                                 -->
+<!-- ============================================================ -->
+<section id="view-services" class="view" data-view="services">
+
+  <!-- Yellow header band -->
+  <div class="yellow-grain" style="background:var(--col-yellow);padding-top:100px;padding-bottom:40px;">
+    <div class="grain"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8" style="position:relative;z-index:2;">
+      <nav class="text-sm mb-4" style="color:var(--col-ink);">
+        <a href="#" data-nav="home" class="hover:underline">Home</a> <span>/</span> Services
+      </nav>
+      <h1 class="section-heading" style="color:var(--col-ink);">Overhead Crane Services</h1>
+      <p class="body-text mt-4 max-w-3xl">
+        In today's challenging business landscape, we understand the inconvenience and consequences of machinery downtime. Hence, we provide cost-effective, quality and speedy services to ensure your overhead cranes are running smoothly and efficiently.
+      </p>
+    </div>
+
+
+  </div>
+
+  <!-- Desktop: sticky list left + detail panel right -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <!-- Desktop layout (two-column) -->
+    <div class="hidden lg:grid lg:grid-cols-12 gap-12">
+      <!-- Service list -->
+      <div class="lg:col-span-4">
+        <div id="serviceListDesktop">
+          <div class="service-list-item is-active" data-service="repair">Repair and Maintenance</div>
+          <div class="service-list-item" data-service="agreement">Service and Maintenance Agreement</div>
+          <div class="service-list-item" data-service="motor-rewinding">Motor Rewinding Services</div>
+          <div class="service-list-item" data-service="load-testing">Load Testing &amp; Visual Inspection</div>
+          <div class="service-list-item" data-service="modification">Crane Modification &amp; Upgrading</div>
+          <div class="service-list-item" data-service="relocation">Crane Relocation</div>
+          <div class="service-list-item" data-service="breakdown">24 Hours Breakdown Notice</div>
+          <div class="service-list-item" data-service="dismantling">Crane Dismantling</div>
+        </div>
+      </div>
+
+      <!-- Detail panel -->
+      <div class="lg:col-span-8">
+        <div id="serviceDetailDesktop">
+          <!-- Repair and Maintenance (active by default) -->
+          <div class="service-detail-panel is-active" data-detail="repair">
+            <h3 class="card-heading text-3xl mb-4">Repair and Maintenance</h3>
+            <p class="body-text mb-6">Scheduled routine checks and regular servicing will help to lengthen your equipment's lifespan and lower maintenance costs.</p>
+            <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+          </div>
+          <!-- Service and Maintenance Agreement -->
+          <div class="service-detail-panel" data-detail="agreement">
+            <h3 class="card-heading text-3xl mb-4">Service and Maintenance Agreement</h3>
+            <p class="body-text mb-6">Comprehensive maintenance agreements to keep your cranes running efficiently with scheduled service intervals.</p>
+            <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+          </div>
+          <!-- Motor Rewinding -->
+          <div class="service-detail-panel" data-detail="motor-rewinding">
+            <h3 class="card-heading text-3xl mb-4">Motor Rewinding Services</h3>
+            <p class="body-text mb-6">Regular servicing of your motor will reduce the risk of accidents and maintain safe operations in the workplace. It also extends the life of cranes, and prevents potential and costly problems.</p>
+            <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+          </div>
+          <!-- Load Testing -->
+          <div class="service-detail-panel" data-detail="load-testing">
+            <h3 class="card-heading text-3xl mb-4">Load Testing &amp; Visual Inspection</h3>
+            <p class="body-text mb-6">Visual inspections and load testing of cranes is mandated by the Ministry of Manpower and must be performed by a Certified PE. We provide one-time or regular inspections, and crane and hoist load testing to sustain your equipment.</p>
+            <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+          </div>
+          <!-- Modification -->
+          <div class="service-detail-panel" data-detail="modification">
+            <h3 class="card-heading text-3xl mb-4">Crane Modification &amp; Upgrading</h3>
+            <p class="body-text mb-6">We offer crane modification and upgrading services to increase equipment lifespan and usability. This reduces the need to discard your equipment, and lowers replacement costs and material wastage.</p>
+            <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+          </div>
+          <!-- Relocation -->
+          <div class="service-detail-panel" data-detail="relocation">
+            <h3 class="card-heading text-3xl mb-4">Crane Relocation</h3>
+            <p class="body-text mb-6">We provide both relocation and crane installation services to improve your site's productivity. We have years of experience and will ensure that we perform such tasks both efficiently and safely.</p>
+            <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+          </div>
+          <!-- Breakdown -->
+          <div class="service-detail-panel" data-detail="breakdown">
+            <h3 class="card-heading text-3xl mb-4" style="color:var(--col-blue);">24 Hours Breakdown Notice</h3>
+            <p class="body-text mb-6">We deliver 24 hour ad-hoc services for industries that operate around the clock. Rest assured that we will respond within 3 hours of the time of activation to quickly address your issues.</p>
+            <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+          </div>
+          <!-- Crane Dismantling -->
+          <div class="service-detail-panel" data-detail="dismantling">
+            <h3 class="card-heading text-3xl mb-4">Crane Dismantling</h3>
+            <p class="body-text mb-6">Safe and efficient dismantling of crane structures and components. Our experienced team manages the complete decommissioning process in compliance with all relevant safety standards.</p>
+            <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile: accordion -->
+    <div class="lg:hidden space-y-4">
+      <div class="accordion-item is-open">
+        <button class="accordion-header">
+          <span>Repair and Maintenance</span>
+          <svg class="accordion-chevron w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-details">
+          <p class="body-text">Scheduled routine checks and regular servicing will help to lengthen your equipment's lifespan and lower maintenance costs.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Service and Maintenance Agreement</span>
+          <svg class="accordion-chevron w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-details">
+          <p class="body-text">Comprehensive maintenance agreements to keep your cranes running efficiently with scheduled service intervals.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Motor Rewinding Services</span>
+          <svg class="accordion-chevron w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-details">
+          <p class="body-text">Regular servicing of your motor will reduce the risk of accidents and maintain safe operations in the workplace. It also extends the life of cranes, and prevents potential and costly problems.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Load Testing &amp; Visual Inspection</span>
+          <svg class="accordion-chevron w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-details">
+          <p class="body-text">Visual inspections and load testing of cranes is mandated by the Ministry of Manpower and must be performed by a Certified PE. We provide one-time or regular inspections, and crane and hoist load testing to sustain your equipment.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Crane Modification &amp; Upgrading</span>
+          <svg class="accordion-chevron w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-details">
+          <p class="body-text">We offer crane modification and upgrading services to increase equipment lifespan and usability. This reduces the need to discard your equipment, and lowers replacement costs and material wastage.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Crane Relocation</span>
+          <svg class="accordion-chevron w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-details">
+          <p class="body-text">We provide both relocation and crane installation services to improve your site's productivity. We have years of experience and will ensure that we perform such tasks both efficiently and safely.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" style="color:var(--col-blue);">
+          <span>24 Hours Breakdown Notice</span>
+          <svg class="accordion-chevron w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-details">
+          <p class="body-text">We deliver 24 hour ad-hoc services for industries that operate around the clock. Rest assured that we will respond within 3 hours of the time of activation to quickly address your issues.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Crane Dismantling</span>
+          <svg class="accordion-chevron w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-details">
+          <p class="body-text">Safe and efficient dismantling of crane structures and components. Our experienced team manages the complete decommissioning process in compliance with all relevant safety standards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- VIEW: ABOUT                                                    -->
+<!-- ============================================================ -->
+<section id="view-about" class="view" data-view="about">
+
+  <!-- Page header: heading only -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8" style="padding-top:100px;padding-bottom:24px;">
+    <h1 class="section-heading" style="padding-bottom:0;">Overhead Crane<br><span style="color:var(--col-blue);">Solution Provider</span></h1>
+  </div>
+
+  <!-- Company story — left column text, right column image+cards -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-12 lg:pb-8">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+      <div>
+        <div class="space-y-4">
+          <p class="body-text">Cimmerian Crane Services is your overhead crane supplier, providing an extensive range of overhead crane equipment of various specifications from electric overhead traveling cranes and mobile gantry cranes, to electric chain hoists and cable reels.</p>
+          <p class="body-text">Our partnership with leading manufacturers offering customer tailor-made solutions for efficient material handling and individual service from design through to maintenance. Whether you need lifting, lowering, linear handling or area coverage, we will help you to keep everything under control.</p>
+          <p class="body-text">Cimmerian Crane Services also provides a full range of repair and maintenance services should the need arise. We also provide modification, relocation, and upgrading of all cranes, hoists and goods-lift systems. With a comprehensive inventory of spare parts and accessories, we ensure minimum downtime, so you can remain focused on increasing the productivity of your business.</p>
+          <p class="body-text">Not forgetting our highly qualified service and maintenance teams available to you 24/7. Our people are committed to ensuring product safety and reliability. We are equipped with special support and test systems which anticipate and address malfunctions should they arise.</p>
+          <p class="body-text font-bold" style="color:var(--col-blue);">With a proven track record of 30 years supplying high-quality products and delivering high-level service standards, you are assured of a seamless customer experience right from your enquiry to equipment delivery and after-sales service.</p>
+
+          <!-- Safety First -->
+          <div class="mt-6 bg-white rounded-2xl p-6" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+            <div class="flex items-center gap-3 mb-3">
+              <h3 class="card-heading" style="margin-bottom:0;">Safety First</h3>
+              <div class="flex-shrink-0" style="width:36px;height:36px;border-radius:8px;background:var(--col-blue-lt);display:flex;align-items:center;justify-content:center;">
+                <svg viewBox="0 0 36 36" width="20" height="20" fill="none">
+                  <path d="M10 18 L16 24 L28 12" stroke="var(--col-blue)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <p class="body-text mb-3">You can trust in our long-standing experience and technical expertise during installation and commissioning. We take care of the scheduled co-ordination of the delivery at the installation site and the timely provision of the equipment such as the mobile crane, access platform and forklifts required for the installation.</p>
+            <p class="body-text">Our qualified skilled technicians are trained with the latest technical standards of our products and install them with a high awareness of safety.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block">
+
+        <!-- Logo above image -->
+        <div class="mb-5">
+          <a href="#" data-nav="home" class="brand-mark" aria-label="Cimmerian Crane Services - Home" style="display:inline-flex;">
+            <div class="brand-mark__shield" style="height:80px;width:80px;">
+              <img src="assets/Cimmerian_Logo_nobg.png"
+                   alt=""
+                   class="brand-mark__img"
+                   aria-hidden="true">
+            </div>
+            <div class="brand-mark__wordmark">
+              <span class="brand-mark__line1" style="font-size:2.6rem;">CIMMERIAN</span>
+              <span class="brand-mark__line2" style="font-size:0.7rem;letter-spacing:0.3em;">CRANE SERVICES</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hero-geometric">
+          <img src="assets/IMAGES/515949212_24738406609095218_2916188097253458783_n.jpg" alt="Cimmerian Crane Services" class="w-full" style="display:block;border-radius:16px;">
+        </div>
+
+        <!-- Partners -->
+        <div class="mt-8 bg-white rounded-2xl p-6 shadow-sm" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+          <h3 class="card-heading mb-4">Our Partners</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm" style="color:var(--col-ink-soft);">
+              <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span><strong>ABUS</strong> — Cranes, Hoists &amp; Goods-Lift Systems</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm" style="color:var(--col-ink-soft);">
+              <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span><strong>HADEF</strong> — Ex-Proof Pneumatic / Winch &amp; Hoist Systems</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm" style="color:var(--col-ink-soft);">
+              <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span><strong>Conductix-Wampfler</strong> — Energy Transmission Systems</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Block A: Key differentiators strip -->
+  <div style="background:var(--col-off-white);border-top:3px solid var(--col-yellow);padding:48px 0;">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 reveal">
+        <div class="flex gap-4 items-start">
+          <div class="shrink-0 w-12 h-12 rounded-lg" style="background:var(--col-yellow);display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 20 20" width="24" height="24" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="#141414" stroke-width="1.8"/><path d="M2 8 L18 8" stroke="#141414" stroke-width="1.2"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl" style="color:var(--col-ink);">30+ Years</div>
+            <p class="text-sm" style="color:var(--col-ink-soft);">Decades of experience supplying overhead crane systems in Singapore and the region.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="shrink-0 w-12 h-12 rounded-lg" style="background:var(--col-yellow);display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 20 20" width="24" height="24" fill="none"><path d="M10 2 L12 9 L18 10 L13 14 L14 20 L10 17 L6 20 L7 14 L2 10 L8 9 Z" stroke="#141414" stroke-width="1.8" fill="#F5C100"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl" style="color:var(--col-ink);">ABUS Partner</div>
+            <p class="text-sm" style="color:var(--col-ink-soft);">Sole distributor of ABUS Crane Systems — German engineering with up to 120-ton capacity.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="shrink-0 w-12 h-12 rounded-lg" style="background:var(--col-yellow);display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 20 20" width="24" height="24" fill="none"><circle cx="10" cy="10" r="8" stroke="#141414" stroke-width="1.8"/><polyline points="7,10.5 9.5,13 13.5,8" stroke="#141414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl" style="color:var(--col-ink);">3-Hour Response</div>
+            <p class="text-sm" style="color:var(--col-ink-soft);">Guaranteed 3-hour maximum response time for breakdown calls — unmatched in the industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- History timeline -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="mt-12 pt-12" style="border-top:1px solid var(--col-border);">
+      <h2 class="section-heading mb-8 reveal">Our History</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal">
+          <div class="bg-white rounded-2xl p-6" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+            <div class="font-display font-extrabold text-5xl" style="color:var(--col-yellow);">1989</div>
+            <p class="body-text mt-3">Cimmerian Crane was established in Singapore, beginning our journey as an overhead crane services provider.</p>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="bg-white rounded-2xl p-6" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+            <div class="font-display font-extrabold text-5xl" style="color:var(--col-yellow);">1994</div>
+            <p class="body-text mt-3">We broadened our range of operations, beginning sales and servicing of customers in Brunei, Saipan and many islands in the Indonesian Waters.</p>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="bg-white rounded-2xl p-6" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+            <div class="font-display font-extrabold text-5xl" style="color:var(--col-yellow);">1996</div>
+            <p class="body-text mt-3">We launched our 3-hour maximum response time for ad-hoc break-down calls upon activation — a feat unchallenged by competitors to this day.</p>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="bg-white rounded-2xl p-6" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+            <div class="font-display font-extrabold text-5xl" style="color:var(--col-yellow);">2012</div>
+            <p class="body-text mt-3">Became the sole distributor of ABUS Crane Systems in Singapore.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABUS partnership section -->
+    <div class="mt-8">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="block w-8 h-px" style="background:var(--col-yellow);"></span>
+            <span class="font-display font-bold text-sm tracking-[0.25em] uppercase" style="color:var(--col-yellow);">Sole Distributor</span>
+          </div>
+          <h2 class="section-heading mb-5">We Are The Sole Distributor<br>Of The <span style="color:var(--col-blue);">ABUS</span> Crane System</h2>
+          <p class="body-text mb-5">Cimmerian Crane is an international partner of ABUS. We ensure that your crane system is ideally adapted to your technical requirements and complies with all applicable national legislation and regulations.</p>
+          <p class="body-text mb-5">ABUS is one of Europe's leading crane manufacturers, offering customers tailor-made solutions for efficient material handling and individual service from design through to maintenance. The company has been ensuring high quality and precision right down to the smallest component for more than 4 decades now.</p>
+          <p class="body-text">ABUS crane systems are the ideal solution for heavy lifting and wide spans. They are also highly versatile and can be adapted to any factory or application with a wide range of available accessories.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+          <h3 class="card-heading text-xl mb-5">The ABUS Company</h3>
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <p class="body-text">Robust, high reliability and low maintenance.</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <p class="body-text">German Engineering with the most successful developments in lifting and material handling technology.</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <p class="body-text">Safe working load (SWL) of 0.08 – 120 tons.</p>
+            </div>
+          </div>
+          <a href="#" class="btn-primary mt-6" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Get a Quote Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brands section -->
+    <div class="mt-12" style="padding-bottom:80px;">
+      <div class="text-center mb-8 reveal">
+        <div class="flex items-center gap-3 mb-4 justify-center">
+          <span class="block w-8 h-px" style="background:var(--col-yellow);"></span>
+          <span class="font-display font-bold text-sm tracking-[0.25em] uppercase" style="color:var(--col-yellow);">Trusted Partners</span>
+          <span class="block w-8 h-px" style="background:var(--col-yellow);"></span>
+        </div>
+        <h2 class="section-heading">Brands We Carry</h2>
+      </div>
+
+      <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 reveal">
+        <!-- ABUS -->
+        <div class="brand-card" id="abus" style="scroll-margin-top:100px;">
+          <div class="brand-card-logo">ABUS</div>
+          <div class="brand-card-name">ABUS</div>
+          <div class="brand-card-desc">Hoisting Technology</div>
+        </div>
+        <!-- HADEF -->
+        <div class="brand-card" id="hadef" style="scroll-margin-top:100px;">
+          <div class="brand-card-logo">HADEF</div>
+          <div class="brand-card-name">HADEF</div>
+          <div class="brand-card-desc">Chain Hoists &amp; Lifting</div>
+        </div>
+        <!-- Conductix-Wampfler -->
+        <div class="brand-card" id="conductix" style="scroll-margin-top:100px;">
+          <div class="brand-card-logo">Conductix-Wampfler</div>
+          <div class="brand-card-name">Conductix-Wampfler</div>
+          <div class="brand-card-desc">Energy &amp; Data Transmission</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block C: CTA strip at bottom -->
+    <div style="background:var(--col-blue);margin-top:48px;">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
+        <div class="text-center reveal">
+          <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;color:#FFFFFF;font-size:clamp(2rem,4vw,2.5rem);letter-spacing:-0.02em;line-height:1.1;margin-bottom:12px;">Ready to lift with confidence?</h2>
+          <p style="color:rgba(255,255,255,0.6);font-size:1rem;margin-bottom:28px;">Contact our team today for a free consultation and customised solution.</p>
+          <a href="#" class="btn-primary" data-nav="contact">Contact Our Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- VIEW: CONTACT                                                  -->
+<!-- ============================================================ -->
+<section id="view-contact" class="view" data-view="contact">
+
+  <!-- Blue header band -->
+  <div class="yellow-grain" style="background:var(--col-blue-dk);padding-top:100px;padding-bottom:40px;">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <nav class="text-sm mb-4 text-white/70">
+        <a href="#" data-nav="home" class="hover:underline text-white/90">Home</a> <span>/</span> Contact
+      </nav>
+      <h1 class="section-heading" style="color:var(--col-white);">Get in Touch</h1>
+      <p class="mt-4 text-lg text-white/80 max-w-3xl">Please feel free to come down to our office to view our internal showroom.</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <!-- Contact details -->
+      <div>
+        <div class="space-y-8">
+          <div>
+            <h3 class="card-heading text-xl mb-6">Visit Our Office</h3>
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <span class="accent-dot"></span>
+                <div>
+                  <p class="font-medium" style="color:var(--col-ink);">75 Tuas Avenue 1, Singapore 639513</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="accent-dot"></span>
+                <a href="tel:+6562663378" class="link-underline">+65 6266 3378</a>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="accent-dot"></span>
+                <a href="mailto:services@cimmeriancrane.com" class="link-underline">services@cimmeriancrane.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 24hr breakdown -->
+          <div class="rounded-2xl p-6" style="background:var(--col-yellow-lt);border:0.5px solid var(--col-border);">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-5 h-5 rounded-full" style="background:var(--col-yellow);"></span>
+              <h4 class="card-heading">24-Hour Breakdown Service</h4>
+            </div>
+            <p class="body-text">For urgent breakdown calls, we respond within 3 hours of activation — a standard our competitors have yet to match.</p>
+          </div>
+
+          <!-- Map embed -->
+          <div class="rounded-2xl overflow-hidden" style="border:0.5px solid var(--col-border);">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.777!2d103.6256!3d1.3087!2m3!1f0!2f0!3f0!3m2!1i1024!4i768!4f13.1!3m3!1m2!1s0x31da1131f5f45b77%3A0x8c0e6a1234567890!2s75+Tuas+Ave+1%2C+Singapore!5e0!3m2!1sen!2ssg!4v1"
+              width="100%"
+              height="250"
+              style="border:0;display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Cimmerian Crane Services location"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div>
+        <div class="bg-white rounded-2xl p-6 md:p-8" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+          <h3 class="card-heading text-xl mb-6">Request a Quote</h3>
+
+          <form id="contactForm" novalidate>
+            <div class="space-y-5">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-1.5" style="color:var(--col-ink-soft);">Full Name <span style="color:var(--col-yellow);">*</span></label>
+                <input type="text" id="name" name="name" required class="form-field" placeholder="Your name">
+              </div>
+              <div>
+                <label for="company" class="block text-sm font-medium mb-1.5" style="color:var(--col-ink-soft);">Company</label>
+                <input type="text" id="company" name="company" class="form-field" placeholder="Company name">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium mb-1.5" style="color:var(--col-ink-soft);">Email <span style="color:var(--col-yellow);">*</span></label>
+                <input type="email" id="email" name="email" required class="form-field" placeholder="your@email.com">
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium mb-1.5" style="color:var(--col-ink-soft);">Phone</label>
+                <input type="tel" id="phone" name="phone" class="form-field" placeholder="Phone number">
+              </div>
+              <div>
+                <label for="service" class="block text-sm font-medium mb-1.5" style="color:var(--col-ink-soft);">Service Interested In</label>
+                <select id="service" name="service" class="form-field">
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="repair">Repair and Maintenance</option>
+                  <option value="agreement">Service and Maintenance Agreement</option>
+                  <option value="motor-rewinding">Motor Rewinding Service</option>
+                  <option value="load-testing">Load Testing &amp; Visual Inspection</option>
+                  <option value="modification">Crane Modification &amp; Upgrading</option>
+                  <option value="relocation">Crane Relocation</option>
+                  <option value="crane-dismantling">Crane Dismantling</option>
+                  <option value="new-crane">New Crane Supply</option>
+                  <option value="breakdown">24 Hour Breakdown Service</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium mb-1.5" style="color:var(--col-ink-soft);">Message <span style="color:var(--col-yellow);">*</span></label>
+                <textarea id="message" name="message" required rows="4" class="form-field resize-y" placeholder="Describe your requirements"></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full">Submit Enquiry</button>
+            </div>
+          </form>
+
+          <!-- Success message -->
+          <div id="contactSuccess" class="success-msg mt-6 text-center">
+            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h4 class="card-heading mb-1">Enquiry Submitted</h4>
+            <p class="body-text">Thank you for your enquiry. We will respond within 3 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background:var(--col-ink);">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+      <div>
+        <a href="#" data-nav="home" class="brand-mark site-footer" style="margin-bottom:16px;">
+          <div class="brand-mark__shield">
+            <img src="assets/Cimmerian_Logo_nobg.png"
+                 alt=""
+                 class="brand-mark__img"
+                 aria-hidden="true">
+          </div>
+          <div class="brand-mark__wordmark">
+            <span class="brand-mark__line1">CIMMERIAN</span>
+            <span class="brand-mark__line2">CRANE SERVICES</span>
+          </div>
+        </a>
+        <div style="border-top:1px solid rgba(255,255,255,0.2);margin-bottom:16px;"></div>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.5);">Leading provider of German engineered overhead crane equipment and services in Singapore.</p>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-sm text-white tracking-widest uppercase mb-4">Products</h4>
+        <ul class="space-y-2">
+          <li><a href="#abus" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="about">ABUS Crane Systems</a></li>
+          <li><a href="#hadef" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="about">Hadef</a></li>
+          <li><a href="#conductix" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="about">Conductix Wampfler</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-sm text-white tracking-widest uppercase mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="services">Repair &amp; Maintenance</a></li>
+          <li><a href="#" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="services">Load Testing &amp; Inspection</a></li>
+          <li><a href="#" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="services">Crane Relocation</a></li>
+          <li><a href="#" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="services">Motor Rewinding</a></li>
+          <li><a href="#" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="services">Crane Modification</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-sm text-white tracking-widest uppercase mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm" style="color:rgba(255,255,255,0.75);">
+          <li>75 Tuas Avenue 1, Singapore 639513</li>
+          <li><a href="tel:+6562663378" class="hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;">+65 6266 3378</a></li>
+          <li><a href="mailto:services@cimmeriancrane.com" class="hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;">services@cimmeriancrane.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.1);">
+      <p class="text-xs" style="color:rgba(255,255,255,0.3);">&copy; 2026 Cimmerian Crane Services Pte Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+(function() {
+  'use strict';
+
+  // ===== View Navigation =====
+  const views = document.querySelectorAll('.view');
+  const navLinks = document.querySelectorAll('[data-nav]');
+  const mobileNavLinks = document.querySelectorAll('[data-mobile-nav]');
+  const desktopNavLinks = document.querySelectorAll('#navbar .nav-link[data-nav]');
+  let currentView = 'home';
+
+  function switchView(viewName) {
+    if (viewName === currentView) return;
+
+    // Deactivate current view
+    const currentViewEl = document.getElementById('view-' + currentView);
+    if (currentViewEl) {
+      currentViewEl.classList.remove('view--active');
+    }
+
+    // Activate new view
+    const newViewEl = document.getElementById('view-' + viewName);
+    if (newViewEl) {
+      newViewEl.classList.add('view--active');
+      // Reinitialize intersection observer for new view
+      initRevealObserver();
+      // Reinit counters if any
+      initCounters();
+    }
+
+    // Update active nav links
+    desktopNavLinks.forEach(link => {
+      link.classList.remove('is-active');
+      if (link.dataset.nav === viewName) {
+        link.classList.add('is-active');
+      }
+    });
+
+    currentView = viewName;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Close mobile menu if open
+    closeMobileMenu();
+  }
+
+  // Desktop nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const viewName = this.dataset.nav;
+      const href = this.getAttribute('href') || '';
+
+      // If this link points to an anchor within the target view, still switch view first
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        switchView(viewName);
+        // After view switches, scroll to anchor (deferred to let view render)
+        const anchor = href.slice(1);
+        setTimeout(() => {
+          const el = document.getElementById(anchor);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+      } else {
+        e.preventDefault();
+        switchView(viewName);
+      }
+    });
+  });
+
+  // Mobile nav links
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      switchView(this.dataset.mobileNav);
+    });
+  });
+
+  // ===== Mobile Menu =====
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  let mobileMenuOpen = false;
+
+  function openMobileMenu() {
+    mobileMenu.classList.add('is-open');
+    hamburgerBtn.classList.add('hamburger-menu-open');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    mobileMenuOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('is-open');
+    hamburgerBtn.classList.remove('hamburger-menu-open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    mobileMenuOpen = false;
+    document.body.style.overflow = '';
+  }
+
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenuOpen ? closeMobileMenu() : openMobileMenu();
+  });
+
+  // Close on escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenuOpen) closeMobileMenu();
+  });
+
+  // ===== Navbar scroll refinement =====
+  const navbar = document.getElementById('navbar');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 80) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // ===== Scroll Reveal =====
+  let revealObserver = null;
+
+  function initRevealObserver() {
+    if (revealObserver) revealObserver.disconnect();
+
+    const reveals = document.querySelectorAll('.view--active .reveal');
+    if (reveals.length === 0) return;
+
+    reveals.forEach((el, index) => {
+      el.style.transitionDelay = (index * 80) + 'ms';
+    });
+
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => revealObserver.observe(el));
+  }
+
+  initRevealObserver();
+
+  // ===== Counter Animation =====
+  const countersAnimated = new Set();
+
+  function easeOutExpo(t) {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function animateCounter(el) {
+    if (el.dataset.counted === 'true') return;
+    el.dataset.counted = 'true';
+
+    const target = parseInt(el.dataset.count, 10);
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutExpo(progress);
+      const current = Math.round(target * eased);
+      el.textContent = current.toLocaleString();
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  function initCounters() {
+    const activeView = document.querySelector('.view--active');
+    if (!activeView) return;
+    const statEls = activeView.querySelectorAll('.stat-number');
+    statEls.forEach(el => {
+      if (el.dataset.counted === 'true') return;
+      if (el.dataset.count) {
+        el.textContent = '0';
+        animateCounter(el);
+      } else {
+        const child = el.querySelector('.counter');
+        if (child && child.dataset.counted !== 'true') {
+          child.textContent = '0';
+          animateCounter(child);
+        }
+      }
+    });
+  }
+
+  // Observe stat numbers with { once: true }
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        if (el.dataset.count) {
+          el.textContent = '0';
+          animateCounter(el);
+        } else {
+          const child = el.querySelector('.counter');
+          if (child) {
+            child.textContent = '0';
+            animateCounter(child);
+          }
+        }
+        statObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-number').forEach(el => {
+    statObserver.observe(el);
+  });
+
+  // ===== SVG Illustration Draw-on-Scroll =====
+  initSvgObserver();
+
+  function initSvgObserver() {
+    const svgEl = document.querySelectorAll('.svg-illus');
+    if (svgEl.length === 0) return;
+    const svgObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          svgObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    svgEl.forEach(el => svgObs.observe(el));
+  }
+
+  // ===== Crane Filter CSS (transition) =====
+  const craneCards2 = document.querySelectorAll('#cranes-grid .product-card');
+  craneCards2.forEach(card => {
+    card.style.opacity = '1';
+    card.style.transition = 'opacity 200ms ease';
+  });
+
+  // ===== Crane Filters =====
+  const craneFilterBtns = document.querySelectorAll('#crane-filters .filter-pill');
+  const craneCards = document.querySelectorAll('#cranes-grid .product-card');
+
+  craneFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // Update active pill
+      craneFilterBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      // Filter cards
+      craneCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.opacity = '0';
+          setTimeout(() => {
+            card.style.display = '';
+            requestAnimationFrame(() => {
+              card.style.opacity = '1';
+            });
+          }, 200);
+        } else {
+          card.style.opacity = '0';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
+    });
+  });
+
+  // ===== Service Panels (Desktop) =====
+  const serviceListItems = document.querySelectorAll('.service-list-item');
+  const servicePanels = document.querySelectorAll('.service-detail-panel');
+
+  serviceListItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const serviceId = item.dataset.service;
+
+      serviceListItems.forEach(i => i.classList.remove('is-active'));
+      item.classList.add('is-active');
+
+      servicePanels.forEach(panel => {
+        panel.classList.remove('is-active');
+        panel.style.display = 'none';
+      });
+
+      const activePanel = document.querySelector(`.service-detail-panel[data-detail="${serviceId}"]`);
+      if (activePanel) {
+        activePanel.style.display = 'block';
+        activePanel.classList.add('is-active');
+      }
+    });
+  });
+
+  // ===== Mobile Accordion =====
+  const accordionItems = document.querySelectorAll('.accordion-item');
+  accordionItems.forEach(item => {
+    const header = item.querySelector('.accordion-header');
+    header.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      // Close all
+      accordionItems.forEach(i => i.classList.remove('is-open'));
+      // Toggle clicked
+      if (!isOpen) item.classList.add('is-open');
+    });
+  });
+
+  // ===== Contact Form =====
+  const contactForm = document.getElementById('contactForm');
+  const contactSuccess = document.getElementById('contactSuccess');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const btn = contactForm.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        contactForm.style.opacity = '0';
+        contactForm.style.transform = 'translateY(8px)';
+        contactForm.style.transition = 'opacity 320ms ease, transform 320ms ease';
+
+        setTimeout(() => {
+          contactForm.style.display = 'none';
+          contactSuccess.classList.add('is-visible');
+        }, 320);
+      }, 1200);
+    });
+  }
+
+  // Add transition styles to form
+  if (contactForm) {
+    contactForm.style.transition = 'opacity 320ms ease, transform 320ms ease';
+  }
+
+  // Init counters on home view load
+  initCounters();
+
+})();
+</script>
+
+</body>
+</html>

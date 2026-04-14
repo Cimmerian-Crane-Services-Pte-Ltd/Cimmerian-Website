@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@openrouter/sdk": "^0.12.3",
+    "puppeteer": "^24.40.0",
+    "sharp": "^0.34.5"
+  }
+}
