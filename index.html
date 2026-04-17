@@ -574,7 +574,7 @@ select:focus-visible {
 .brand-mark__wordmark {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   line-height: 1;
 }
 .brand-mark__line1 {
@@ -595,17 +595,18 @@ select:focus-visible {
   color: var(--col-ink-soft);
 }
 /* Nav context — on light background */
-.nav-bar .brand-mark__shield { height: 55px; width: 55px; }
-.nav-bar .brand-mark__line1 { font-size: 1.56rem; color: var(--col-ink); }
-.nav-bar .brand-mark__line2 { font-size: 0.7rem; color: var(--col-ink-soft); }
+.nav-bar .brand-mark { gap: 8px; }
+.nav-bar .brand-mark__shield { height: 48px; width: 48px; }
+.nav-bar .brand-mark__line1 { font-size: 1.15rem; color: var(--col-ink); letter-spacing: 0.05em; }
+.nav-bar .brand-mark__line2 { font-size: 0.56rem; color: var(--col-ink-soft); letter-spacing: 0.32em; }
 /* Hero context — on light background */
 .hero-section .brand-mark__line1 { color: var(--col-ink); }
 .hero-section .brand-mark__line2 { color: var(--col-ink-soft); }
 /* About context — on light background */
-.about-brand .brand-mark { gap: 14px; }
-.about-brand .brand-mark__shield { height: 64px; width: 64px; }
-.about-brand .brand-mark__line1 { font-size: 1.7rem; }
-.about-brand .brand-mark__line2 { font-size: 0.65rem; letter-spacing: 0.3em; }
+.about-brand .brand-mark { gap: 12px; }
+.about-brand .brand-mark__shield { height: 56px; width: 56px; }
+.about-brand .brand-mark__line1 { font-size: 1.3rem; letter-spacing: 0.06em; }
+.about-brand .brand-mark__line2 { font-size: 0.58rem; letter-spacing: 0.32em; }
 /* Footer context — on dark ink background */
 .site-footer .brand-mark__shield { height: 83px; width: 83px; }
 .site-footer .brand-mark__line1 { font-size: 2.37rem; color: #FFFFFF; }
