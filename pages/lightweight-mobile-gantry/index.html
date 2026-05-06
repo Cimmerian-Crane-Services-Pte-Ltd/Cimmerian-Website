@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lightweight Mobile Gantry Crane | Cimmerian Crane Services</title>
+<meta name="description" content="Portable gantry crane with up to 2 tons capacity. Ideal for multi-station lifting, maintenance, and assembly operations in Singapore.">
+<link rel="icon" href="/assets/Cimmerian_Logo_nobg.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          yellow: '#F5C100',
+          'yellow-dk': '#D4A800',
+          'yellow-lt': '#FFF3CC',
+          blue: '#1A6BB5',
+          'blue-dk': '#0F4A82',
+          'blue-lt': '#D4E6F5',
+          'off-white': '#F0EDE6',
+          ink: '#141414',
+          'ink-soft': '#4A4A4A',
+          cream: '#F8F6F0',
+        },
+        fontFamily: {
+          display: ['Barlow Condensed', 'sans-serif'],
+          body: ['DM Sans', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: 'DM Sans', sans-serif; background: var(--col-off-white, #F0EDE6); color: var(--col-ink-soft, #4A4A4A); line-height: 1.72; }
+  :root {
+    --col-yellow: #F5C100;
+    --col-yellow-dk: #D4A800;
+    --col-yellow-lt: #FFF3CC;
+    --col-blue: #1A6BB5;
+    --col-blue-dk: #0F4A82;
+    --col-ink: #141414;
+    --col-ink-soft: #4A4A4A;
+    --col-cream: #F8F6F0;
+    --col-off-white: #F0EDE6;
+    --col-border: rgba(20,20,20,0.10);
+  }
+  .section-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--col-ink, #141414);
+  }
+  .card-heading { font-size: 1.25rem; font-weight: 700; color: var(--col-ink, #141414); }
+  .body-text { font-size: 1rem; line-height: 1.72; color: var(--col-ink-soft, #4A4A4A); }
+  .btn-primary {
+    background: var(--col-yellow);
+    color: var(--col-ink);
+    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;
+    padding: 14px 32px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9375rem;
+    transition: background 200ms ease, transform 200ms cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .btn-primary:hover { background: var(--col-yellow-dk); transform: scale(1.03); }
+  .btn-primary:active { transform: scale(0.97); }
+  .card-box {
+    background: #FFFFFF;
+    border: 0.5px solid rgba(20,20,20,0.08);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.08);
+  }
+  .nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--col-ink);
+  }
+  .nav-brand-logo { height: 40px; width: auto; }
+  .nav-brand-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    color: var(--col-ink);
+    line-height: 1;
+  }
+  .nav-brand-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--col-ink-soft);
+    line-height: 1;
+  }
+  .top-nav {
+    background: var(--col-cream, #F8F6F0);
+    border-bottom: 1px solid rgba(20,20,20,0.08);
+  }
+  .top-nav a {
+    color: var(--col-ink-soft, #4A4A4A);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 200ms ease;
+  }
+  .top-nav a:hover { color: var(--col-ink, #141414); }
+  .breadcrumb a { color: var(--col-ink-soft, #4A4A4A); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb span { color: var(--col-ink-soft, #4A4A4A); }
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="top-nav">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="nav-brand" aria-label="Cimmerian Crane Services - Home">
+      <img src="/assets/Cimmerian_Logo_nobg.png" alt="" class="nav-brand-logo" aria-hidden="true">
+      <div>
+        <div class="nav-brand-text">CIMMERIAN</div>
+        <div class="nav-brand-sub">CRANE SERVICES</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="/">Home</a>
+      <a href="/products/">Products</a>
+      <a href="/services/">Services</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Yellow Header Band -->
+<div style="background:var(--col-yellow);padding-top:80px;padding-bottom:50px;">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <nav class="breadcrumb text-sm mb-4" style="color:var(--col-ink);">
+      <a href="/">Home</a> <span style="margin:0 6px;">/</span>
+      <a href="/products/">Products</a> <span style="margin:0 6px;">/</span>
+      Lightweight Mobile Gantry
+    </nav>
+    <h1 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.5rem,5vw,4rem);letter-spacing:-0.03em;line-height:1;color:var(--col-ink);margin:0 0 12px;">Lightweight Mobile Gantry Crane</h1>
+    <p class="body-text" style="max-width:700px;font-size:1.125rem;color:var(--col-ink,rgba(0,0,0,0.85));">Portable lifting solution designed for flexibility across multiple workstations — no permanent installation required.</p>
+  </div>
+</div>
+
+<!-- Product Hero -->
+<div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
+  <div class="grid lg:grid-cols-5 gap-12">
+    <!-- Image column -->
+    <div class="lg:col-span-3">
+      <div class="card-box overflow-hidden">
+        <img src="https://www.cimmeriancrane.com/wp-content/uploads/ABUS-LightWeight_Mobile_Gantry_nobg.png" alt="ABUS Lightweight Mobile Gantry Crane" style="width:100%;display:block;aspect-ratio:16/10;object-fit:contain;background:#fff;">
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div class="card-box overflow-hidden">
+          <img src="https://www.cimmeriancrane.com/wp-content/uploads/ABUS-LightWeight%20Mobile%20Gantry.jpg" alt="Mobile gantry crane in workshop" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;">
+        </div>
+        <div class="card-box overflow-hidden">
+          <img src="https://www.cimmeriancrane.com/wp-content/uploads/476824610_1137533931400792_6034393920170034294_n.jpg" alt="Mobile gantry crane at work" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;">
+        </div>
+      </div>
+    </div>
+    <!-- Details column -->
+    <div class="lg:col-span-2">
+      <div class="mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span style="display:block;width:32px;height:2px;background:var(--col-yellow);"></span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--col-yellow);">Mobile Gantry</span>
+        </div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.75rem,3vw,2.5rem);letter-spacing:-0.02em;line-height:1.1;color:var(--col-ink);margin:0 0 20px;">Portable Lifting<br>Solution for Multiple Stations</h2>
+        <p class="body-text mb-4">The ABUS lightweight mobile gantry crane offers exceptional flexibility when you need to move a crane between different workstations. With its compact design and steerable rollers, it can be easily positioned exactly where it's needed.</p>
+        <p class="body-text mb-6">Perfect for maintenance work, assembly operations, or workshops where a fixed installation isn't practical. The crane provides reliable lifting capability while being completely mobile.</p>
+      </div>
+      <!-- Specs -->
+      <div class="card-box p-6 mb-6">
+        <h3 class="card-heading mb-4" style="font-size:1.125rem;">Key Specifications</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <p class="text-sm" style="color:var(--col-ink-soft);">Load Capacity</p>
+            <p class="font-bold text-xl" style="color:var(--col-ink);">Up to 2 tons</p>
+          </div>
+          <div>
+            <p class="text-sm" style="color:var(--col-ink-soft);">Mobility</p>
+            <p class="font-bold text-xl" style="color:var(--col-ink);">4 steerable rollers</p>
+          </div>
+          <div>
+            <p class="text-sm" style="color:var(--col-ink-soft);">Control Options</p>
+            <p class="font-bold text-xl" style="color:var(--col-ink);">Push-button or radio</p>
+          </div>
+          <div>
+            <p class="text-sm" style="color:var(--col-ink-soft);">Design</p>
+            <p class="font-bold text-xl" style="color:var(--col-ink);">Compact & lightweight</p>
+          </div>
+        </div>
+      </div>
+      <!-- Features -->
+      <div class="mb-6">
+        <h3 class="card-heading text-lg mb-4">Features &amp; Benefits</h3>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">Portable design with 4 steerable stop rollers for easy positioning</span></li>
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">Load capacity up to 2 tons SWL (Safe Working Load)</span></li>
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">Lightweight construction for easy maneuverability</span></li>
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">Optional electrical hoist travel or mobile control systems</span></li>
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">Ideal for maintenance, assembly, and multi-station operations</span></li>
+        </ul>
+      </div>
+      <a href="/contact/" class="btn-primary">Request a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- When to Choose -->
+<div style="background:#fff;border-top:1px solid var(--col-border);border-bottom:1px solid var(--col-border);">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div style="max-width:600px;margin-bottom:40px;">
+      <div class="flex items-center gap-3 mb-4">
+        <span style="display:block;width:32px;height:2px;background:var(--col-yellow);"></span>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--col-yellow);">Comparison</span>
+      </div>
+      <h2 class="section-heading">When to Choose a<br>Mobile Gantry Crane</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Mobile Gantry (highlighted) -->
+      <div class="rounded-2xl p-6 relative" style="background:var(--col-yellow-lt);border-left:3px solid var(--col-yellow);">
+        <div class="flex items-center gap-2 mb-3">
+          <svg class="w-5 h-5" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--col-blue);">Best Choice</span>
+        </div>
+        <h3 class="card-heading text-base mb-3">Mobile Gantry Crane</h3>
+        <p class="mb-4" style="font-size:0.9375rem;color:var(--col-ink-soft);">Flexible, portable, and easy to reposition. No floor anchoring or permanent installation needed.</p>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li class="flex items-start gap-2 mb-2 text-sm" style="color:var(--col-ink-soft);"><span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--col-blue);"></span>Quick repositioning between workstations</li>
+          <li class="flex items-start gap-2 mb-2 text-sm" style="color:var(--col-ink-soft);"><span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--col-blue);"></span>No structural modifications required</li>
+          <li class="flex items-start gap-2 text-sm" style="color:var(--col-ink-soft);"><span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--col-blue);"></span>Cost-effective for temporary or seasonal work</li>
+        </ul>
+      </div>
+      <!-- Fixed Overhead Crane -->
+      <div class="card-box rounded-2xl p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <svg class="w-5 h-5" style="color:var(--col-ink-soft);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--col-ink-soft);">Consider</span>
+        </div>
+        <h3 class="card-heading text-base mb-3">Fixed Overhead Crane</h3>
+        <p class="mb-4" style="font-size:0.9375rem;color:var(--col-ink-soft);">Ideal for high-frequency, fixed-path lifting in permanent facilities.</p>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li class="flex items-start gap-2 mb-2 text-sm" style="color:var(--col-ink-soft);"><span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background:#ccc;"></span>Requires permanent installation</li>
+          <li class="flex items-start gap-2 mb-2 text-sm" style="color:var(--col-ink-soft);"><span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background:#ccc;"></span>Built for heavy-duty, continuous operation</li>
+          <li class="flex items-start gap-2 text-sm" style="color:var(--col-ink-soft);"><span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background:#ccc;"></span>Higher upfront investment</li>
+        </ul>
+      </div>
+      <!-- Forklift -->
+      <div class="card-box rounded-2xl p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <svg class="w-5 h-5" style="color:var(--col-ink-soft);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--col-ink-soft);">Compare</span>
+        </div>
+        <h3 class="card-heading text-base mb-3">Forklift / Crane</h3>
+        <p class="mb-4" style="font-size:0.9375rem;color:var(--col-ink-soft);">Versatile but requires clear floor space and an operator on-site at all times.</p>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li class="flex items-start gap-2 mb-2 text-sm" style="color:var(--col-ink-soft);"><span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background:#ccc;"></span>Occupies valuable floor space</li>
+          <li class="flex items-start gap-2 mb-2 text-sm" style="color:var(--col-ink-soft);"><span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background:#ccc;"></span>Limited precision in load positioning</li>
+          <li class="flex items-start gap-2 text-sm" style="color:var(--col-ink-soft);"><span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background:#ccc;"></span>Requires trained forklift operator</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Applications -->
+<div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
+  <div style="max-width:600px;margin-bottom:40px;">
+    <div class="flex items-center gap-3 mb-4">
+      <span style="display:block;width:32px;height:2px;background:var(--col-yellow);"></span>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--col-yellow);">Applications</span>
+    </div>
+    <h2 class="section-heading">Where Mobile Gantry Cranes<br>Deliver Real Value</h2>
+    <p class="body-text mt-4" style="max-width:640px;">From maintenance bays to assembly lines, our mobile gantry cranes are used across industries wherever precise, temporary lifting is required.</p>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+    <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+      <svg class="w-8 h-8 mx-auto mb-3" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.384 3.174 1.42-5.88L4.17 8.17l5.92-.49L12 3l1.91 4.68 5.92.49-3.386 4.29 1.42 5.88z"/></svg>
+      <h4 class="font-bold text-sm mb-1">Maintenance Bays</h4>
+      <p class="text-xs" style="color:var(--col-ink-soft);">Engine and component removal</p>
+    </div>
+    <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+      <svg class="w-8 h-8 mx-auto mb-3" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      <h4 class="font-bold text-sm mb-1">Assembly Lines</h4>
+      <p class="text-xs" style="color:var(--col-ink-soft);">Component placement</p>
+    </div>
+    <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+      <svg class="w-8 h-8 mx-auto mb-3" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      <h4 class="font-bold text-sm mb-1">Workshops</h4>
+      <p class="text-xs" style="color:var(--col-ink-soft);">Multi-task lifting</p>
+    </div>
+    <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+      <svg class="w-8 h-8 mx-auto mb-3" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      <h4 class="font-bold text-sm mb-1">Warehouses</h4>
+      <p class="text-xs" style="color:var(--col-ink-soft);">Loading and staging</p>
+    </div>
+    <div class="rounded-xl p-5 text-center md:col-span-2" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+      <svg class="w-8 h-8 mx-auto mb-3" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      <h4 class="font-bold text-sm mb-1">Manufacturing &amp; Fabrication</h4>
+      <p class="text-xs" style="color:var(--col-ink-soft);">Heavy part positioning and machine maintenance</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<div style="background:var(--col-blue-dk);padding:80px 20px;text-align:center;">
+  <div class="max-w-3xl mx-auto">
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.75rem,4vw,3rem);letter-spacing:-0.02em;line-height:1.1;color:#fff;margin:0 0 16px;">Need a Mobile Gantry Crane?</h2>
+    <p class="mb-8" style="font-size:1.125rem;color:rgba(255,255,255,0.8);">Let our team help you select the right crane for your application. Get a custom quote today.</p>
+    <a href="/contact/" class="btn-primary" style="font-size:1rem;padding:16px 40px;">Get a Quote Now</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer style="background:#1a1a1a;">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1rem;letter-spacing:0.08em;color:#fff;margin-bottom:4px;">CIMMERIAN</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;">CRANE SERVICES</div>
+        <p style="color:rgba(255,255,255,0.4);font-size:0.875rem;line-height:1.6;">Leading provider of German engineered overhead crane equipment and services in Singapore.</p>
+      </div>
+      <div>
+        <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Products</h4>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li class="mb-2"><a href="/lightweight-mobile-gantry/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Lightweight Mobile Gantry</a></li>
+          <li class="mb-2"><a href="/jib-cranes/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Jib Crane</a></li>
+          <li class="mb-2"><a href="/overhead-travelling-crane/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Overhead Travelling Crane</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Services</h4>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li class="mb-2"><a href="/services/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Repair &amp; Maintenance</a></li>
+          <li class="mb-2"><a href="/services/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Load Testing &amp; Inspection</a></li>
+          <li class="mb-2"><a href="/services/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Crane Relocation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Contact</h4>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li class="mb-2" style="color:rgba(255,255,255,0.6);">75 Tuas Avenue 1, Singapore 639513</li>
+          <li class="mb-2"><a href="tel:+6562663378" style="color:rgba(255,255,255,0.6);text-decoration:none;">+65 6266 3378</a></li>
+          <li><a href="mailto:services@cimmeriancrane.com" style="color:rgba(255,255,255,0.6);text-decoration:none;">services@cimmeriancrane.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);text-align:center;">
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);">&copy; 2026 Cimmerian Crane Services Pte Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

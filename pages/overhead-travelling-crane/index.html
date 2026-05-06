@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overhead Travelling Crane | Cimmerian Crane Services</title>
+<meta name="description" content="German engineered overhead travelling crane with up to 120 tons capacity. Customizable for warehousing, assembly, and heavy industrial applications.">
+<link rel="icon" href="/assets/Cimmerian_Logo_nobg.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          yellow: '#F5C100',
+          'yellow-dk': '#D4A800',
+          'yellow-lt': '#FFF3CC',
+          blue: '#1A6BB5',
+          'blue-dk': '#0F4A82',
+          'off-white': '#F0EDE6',
+          ink: '#141414',
+          'ink-soft': '#4A4A4A',
+          cream: '#F8F6F0',
+        },
+        fontFamily: {
+          display: ['Barlow Condensed', 'sans-serif'],
+          body: ['DM Sans', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: 'DM Sans', sans-serif; background: var(--col-off-white, #F0EDE6); color: var(--col-ink-soft, #4A4A4A); line-height: 1.72; }
+  :root {
+    --col-yellow: #F5C100;
+    --col-yellow-dk: #D4A800;
+    --col-yellow-lt: #FFF3CC;
+    --col-blue: #1A6BB5;
+    --col-blue-dk: #0F4A82;
+    --col-ink: #141414;
+    --col-ink-soft: #4A4A4A;
+    --col-cream: #F8F6F0;
+    --col-off-white: #F0EDE6;
+    --col-border: rgba(20,20,20,0.10);
+  }
+  .section-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--col-ink, #141414);
+  }
+  .card-heading { font-size: 1.25rem; font-weight: 700; color: var(--col-ink, #141414); }
+  .body-text { font-size: 1rem; line-height: 1.72; color: var(--col-ink-soft, #4A4A4A); }
+  .btn-primary {
+    background: var(--col-yellow);
+    color: var(--col-ink);
+    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;
+    padding: 14px 32px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9375rem;
+    transition: background 200ms ease, transform 200ms cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .btn-primary:hover { background: var(--col-yellow-dk); transform: scale(1.03); }
+  .btn-primary:active { transform: scale(0.97); }
+  .card-box {
+    background: #FFFFFF;
+    border: 0.5px solid rgba(20,20,20,0.08);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.08);
+  }
+  .nav-brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--col-ink); }
+  .nav-brand-logo { height: 40px; width: auto; }
+  .nav-brand-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: 0.08em; color: var(--col-ink); line-height: 1; }
+  .nav-brand-sub { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.5rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--col-ink-soft); line-height: 1; }
+  .top-nav { background: var(--col-cream, #F8F6F0); border-bottom: 1px solid rgba(20,20,20,0.08); }
+  .top-nav a { color: var(--col-ink-soft, #4A4A4A); text-decoration: none; font-weight: 500; font-size: 0.9375rem; transition: color 200ms ease; }
+  .top-nav a:hover { color: var(--col-ink, #141414); }
+  .breadcrumb a { color: var(--col-ink-soft, #4A4A4A); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb span { color: var(--col-ink-soft, #4A4A4A); }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="nav-brand" aria-label="Cimmerian Crane Services - Home">
+      <img src="/assets/Cimmerian_Logo_nobg.png" alt="" class="nav-brand-logo" aria-hidden="true">
+      <div><div class="nav-brand-text">CIMMERIAN</div><div class="nav-brand-sub">CRANE SERVICES</div></div>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="/">Home</a><a href="/products/">Products</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/contact/">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div style="background:var(--col-yellow);padding-top:80px;padding-bottom:50px;">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <nav class="breadcrumb text-sm mb-4" style="color:var(--col-ink);"><a href="/">Home</a> <span style="margin:0 6px;">/</span><a href="/products/">Products</a> <span style="margin:0 6px;">/</span> Overhead Travelling Crane</nav>
+    <h1 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.5rem,5vw,4rem);letter-spacing:-0.03em;line-height:1;color:var(--col-ink);margin:0 0 12px;">Overhead Travelling Crane</h1>
+    <p class="body-text" style="max-width:700px;font-size:1.125rem;color:var(--col-ink,rgba(0,0,0,0.85));">Heavy-duty industrial lifting — engineered to handle loads up to 120 tons with precision, reliability, and German craftsmanship.</p>
+  </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
+  <div class="grid lg:grid-cols-5 gap-12">
+    <div class="lg:col-span-3">
+      <div class="card-box overflow-hidden"><img src="https://www.cimmeriancrane.com/wp-content/uploads/ABUS-Overhead_Travelling_Crane_1_nobg.png" alt="ABUS Overhead Travelling Crane" style="width:100%;display:block;aspect-ratio:16/10;object-fit:contain;background:#fff;"></div>
+      <div class="grid grid-cols-3 gap-4 mt-4">
+        <div class="card-box overflow-hidden"><img src="https://www.cimmeriancrane.com/wp-content/uploads/ABUS-Overhead%20Travelling%20Crane%202.jpg" alt="Overhead crane in warehouse" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;"></div>
+        <div class="card-box overflow-hidden"><img src="https://www.cimmeriancrane.com/wp-content/uploads/ABUS-Overhead%20Travelling%20Crane%203.jpg" alt="Overhead crane assembly line" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;"></div>
+        <div class="card-box overflow-hidden"><img src="https://www.cimmeriancrane.com/wp-content/uploads/515500180_24738409785761567_1591179484651832219_n.jpg" alt="Overhead crane industrial setting" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;"></div>
+      </div>
+    </div>
+    <div class="lg:col-span-2">
+      <div class="mb-6">
+        <div class="flex items-center gap-3 mb-4"><span style="display:block;width:32px;height:2px;background:var(--col-yellow);"></span><span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--col-yellow);">Heavy-Duty Lifting</span></div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.75rem,3vw,2.5rem);letter-spacing:-0.02em;line-height:1.1;color:var(--col-ink);margin:0 0 20px;">Industrial Strength<br>Material Handling</h2>
+        <p class="body-text mb-4">The ABUS overhead travelling crane is the ultimate solution for heavy industrial applications. Designed to handle loads up to 120 tons, these cranes provide reliable, efficient material handling for the toughest jobs.</p>
+        <p class="body-text mb-6">With fully customizable components and four distinctive system configurations, the overhead travelling crane can be tailored to meet your specific operational requirements, whether for warehousing, assembly lines, or heavy manufacturing.</p>
+      </div>
+      <div class="card-box p-6 mb-6">
+        <h3 class="card-heading mb-4" style="font-size:1.125rem;">Key Specifications</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div><p class="text-sm" style="color:var(--col-ink-soft);">Load Capacity</p><p class="font-bold text-xl" style="color:var(--col-ink);">Up to 120 tons</p></div>
+          <div><p class="text-sm" style="color:var(--col-ink-soft);">System Types</p><p class="font-bold text-xl" style="color:var(--col-ink);">4 configurations</p></div>
+          <div><p class="text-sm" style="color:var(--col-ink-soft);">Customization</p><p class="font-bold text-xl" style="color:var(--col-ink);">Fully customizable</p></div>
+          <div><p class="text-sm" style="color:var(--col-ink-soft);">Applications</p><p class="font-bold text-xl" style="color:var(--col-ink);">Heavy industrial</p></div>
+        </div>
+      </div>
+      <div class="mb-6">
+        <h3 class="card-heading text-lg mb-4">Features &amp; Benefits</h3>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">Highest load capacity in the ABUS crane range — up to 120 tons SWL</span></li>
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">Four distinctive system configurations for varied applications</span></li>
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">Fully customizable components to match your facility requirements</span></li>
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">Ideal for assembly, storage, transportation, and warehousing operations</span></li>
+          <li class="flex items-start gap-3 mb-3"><span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span><span class="body-text">German engineering with exceptional durability and reliability</span></li>
+        </ul>
+      </div>
+      <a href="/contact/" class="btn-primary">Request a Quote</a>
+    </div>
+  </div>
+</div>
+
+<div style="background:#fff;border-top:1px solid var(--col-border);border-bottom:1px solid var(--col-border);">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div style="max-width:600px;margin-bottom:40px;">
+      <div class="flex items-center gap-3 mb-4"><span style="display:block;width:32px;height:2px;background:var(--col-yellow);"></span><span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--col-yellow);">Configurations</span></div>
+      <h2 class="section-heading">Four Systems.<br>One Perfect Fit.</h2>
+      <p class="body-text mt-4" style="max-width:640px;">Each ABUS overhead travelling crane system is engineered for a specific duty class — from light assembly to heavy forging.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.25rem;color:var(--col-blue);">D1</span><h4 class="font-bold text-sm mt-3 mb-2">Light Duty</h4><p class="text-xs" style="color:var(--col-ink-soft);">Occasional lifts, manual positioning. Warehouses &amp; assembly.</p></div>
+      <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.25rem;color:var(--col-blue);">D2</span><h4 class="font-bold text-sm mt-3 mb-2">Medium Duty</h4><p class="text-xs" style="color:var(--col-ink-soft);">Regular operation, moderate frequency. Manufacturing plants.</p></div>
+      <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.25rem;color:var(--col-blue);">D3</span><h4 class="font-bold text-sm mt-3 mb-2">Heavy Duty</h4><p class="text-xs" style="color:var(--col-ink-soft);">Frequent use, high loads. Steel mills &amp; foundries.</p></div>
+      <div class="rounded-xl p-5 text-center" style="background:var(--col-yellow-lt);border-left:3px solid var(--col-yellow);"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.25rem;color:var(--col-blue);">D4</span><h4 class="font-bold text-sm mt-3 mb-2">Severe Duty</h4><p class="text-xs" style="color:var(--col-ink-soft);">Continuous operation, max loads. Heavy industry &amp; forging.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
+  <div style="max-width:600px;margin-bottom:40px;">
+    <div class="flex items-center gap-3 mb-4"><span style="display:block;width:32px;height:2px;background:var(--col-yellow);"></span><span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--col-yellow);">The ABUS Advantage</span></div>
+    <h2 class="section-heading">Built for Decades.<br>Designed for Safety.</h2>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);"><svg class="w-8 h-8 mx-auto mb-3" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><h4 class="font-bold text-sm mb-1">ISO Certified</h4><p class="text-xs" style="color:var(--col-ink-soft);">Quality-managed factory</p></div>
+    <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);"><svg class="w-8 h-8 mx-auto mb-3" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><h4 class="font-bold text-sm mb-1">30+ Year Life</h4><p class="text-xs" style="color:var(--col-ink-soft);">Built for longevity</p></div>
+    <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);"><svg class="w-8 h-8 mx-auto mb-3" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg><h4 class="font-bold text-sm mb-1">Low Maintenance</h4><p class="text-xs" style="color:var(--col-ink-soft);">Sealed gear technology</p></div>
+    <div class="rounded-xl p-5 text-center" style="background:#fff;border:0.5px solid var(--col-border);box-shadow:0 1px 4px rgba(0,0,0,0.04);"><svg class="w-8 h-8 mx-auto mb-3" style="color:var(--col-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><h4 class="font-bold text-sm mb-1">Local Support</h4><p class="text-xs" style="color:var(--col-ink-soft);">Singapore-based team</p></div>
+  </div>
+</div>
+
+<div style="background:var(--col-blue-dk);padding:80px 20px;text-align:center;">
+  <div class="max-w-3xl mx-auto">
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.75rem,4vw,3rem);letter-spacing:-0.02em;line-height:1.1;color:#fff;margin:0 0 16px;">Need an Overhead Travelling Crane?</h2>
+    <p class="mb-8" style="font-size:1.125rem;color:rgba(255,255,255,0.8);">From system configuration to installation, our team guides you every step. Get a custom quote today.</p>
+    <a href="/contact/" class="btn-primary" style="font-size:1rem;padding:16px 40px;">Get a Quote Now</a>
+  </div>
+</div>
+
+<footer style="background:#1a1a1a;">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm">
+      <div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1rem;letter-spacing:0.08em;color:#fff;margin-bottom:4px;">CIMMERIAN</div><div style="font-family:'DM Sans',sans-serif;font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;">CRANE SERVICES</div><p style="color:rgba(255,255,255,0.4);font-size:0.875rem;line-height:1.6;">Leading provider of German engineered overhead crane equipment and services in Singapore.</p></div>
+      <div><h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Products</h4><ul style="list-style:none;padding:0;margin:0;"><li class="mb-2"><a href="/lightweight-mobile-gantry/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Lightweight Mobile Gantry</a></li><li class="mb-2"><a href="/jib-cranes/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Jib Crane</a></li><li class="mb-2"><a href="/overhead-travelling-crane/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Overhead Travelling Crane</a></li></ul></div>
+      <div><h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Services</h4><ul style="list-style:none;padding:0;margin:0;"><li class="mb-2"><a href="/services/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Repair &amp; Maintenance</a></li><li class="mb-2"><a href="/services/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Load Testing &amp; Inspection</a></li><li class="mb-2"><a href="/services/" style="color:rgba(255,255,255,0.6);text-decoration:none;">Crane Relocation</a></li></ul></div>
+      <div><h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Contact</h4><ul style="list-style:none;padding:0;margin:0;"><li class="mb-2" style="color:rgba(255,255,255,0.6);">75 Tuas Avenue 1, Singapore 639513</li><li class="mb-2"><a href="tel:+6562663378" style="color:rgba(255,255,255,0.6);text-decoration:none;">+65 6266 3378</a></li><li><a href="mailto:services@cimmeriancrane.com" style="color:rgba(255,255,255,0.6);text-decoration:none;">services@cimmeriancrane.com</a></li></ul></div>
+    </div>
+    <div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);text-align:center;"><p style="font-size:0.75rem;color:rgba(255,255,255,0.3);">&copy; 2026 Cimmerian Crane Services Pte Ltd. All rights reserved.</p></div>
+  </div>
+</footer>
+
+</body>
+</html>
