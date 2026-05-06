@@ -611,6 +611,25 @@ select:focus-visible {
 .site-footer .brand-mark__line1 { font-size: 2.37rem; color: #FFFFFF; }
 .site-footer .brand-mark__line2 { font-size: 1.05rem; color: rgba(255,255,255,0.5); }
 
+/* ===== Dropdown Menu ===== */
+#cranes-dropdown {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  pointer-events: none;
+}
+#cranes-dropdown.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.nav-link[data-nav="cranes"]:hover + #cranes-dropdown,
+#cranes-dropdown:hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 /* ===== SVG Illustrations ===== */
 @keyframes svgDraw {
   from { stroke-dashoffset: 1000; }
@@ -659,13 +678,6 @@ select:focus-visible {
 }
 .link-underline:hover {
   text-decoration: underline;
-}
-.illustration-caption {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  color: var(--col-ink);
-  text-align: center;
-  margin-top: 8px;
 }
 
 /* ===== Brand cards ===== */
@@ -760,6 +772,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#" class="btn-primary" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Request a Quote</a>
       </div>
 
+      <!-- Desktop Dropdown for Cranes (hidden by default) -->
+      <div id="cranes-dropdown" class="hidden absolute top-full left-0 right-0 bg-[var(--col-off-white)] border-b" style="border-color:var(--col-border);z-index:40;">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-4">
+          <div class="grid grid-cols-3 gap-4">
+            <a href="#" class="nav-link" data-nav="lightweight-mobile-crane" style="font-size:0.875rem;">Lightweight Mobile Crane</a>
+            <a href="#" class="nav-link" data-nav="overhead-travelling-crane" style="font-size:0.875rem;">Overhead Travelling Crane</a>
+            <a href="#" class="nav-link" data-nav="jib-crane" style="font-size:0.875rem;">Jib Crane</a>
+          </div>
+        </div>
+      </div>
+
       <!-- Hamburger button -->
       <button id="hamburgerBtn" class="lg:hidden flex flex-col items-center justify-center gap-[6px] p-2" style="min-height:44px;min-width:44px;" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger-line"></span>
@@ -775,6 +798,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="flex flex-col items-center gap-6">
     <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="home">Home</a>
     <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="cranes">Cranes</a>
+    <div class="flex flex-col items-center gap-4" style="margin-left: 2rem;">
+      <a href="#" class="font-display font-bold text-3xl text-white/80 tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="lightweight-mobile-crane">Lightweight Mobile Gantry</a>
+      <a href="#" class="font-display font-bold text-3xl text-white/80 tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="jib-crane">Jib Crane</a>
+      <a href="#" class="font-display font-bold text-3xl text-white/80 tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="overhead-travelling-crane">Overhead Travelling Crane</a>
+    </div>
     <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="hoists">Hoists</a>
     <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="services">Services</a>
     <a href="#" class="font-display font-bold text-5xl text-white tracking-wide hover:text-yellow" style="transition:color 200ms;text-decoration:none;" data-mobile-nav="about">About</a>
@@ -815,7 +843,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="lg:col-span-3 hidden lg:block">
           <div class="hero-geometric">
-            <img src="assets/IMAGES/476824610_1137533931400792_6034393920170034294_n.jpg" alt="ABUS Crane System" class="w-full h-full" style="display:block;border-radius:16px;object-fit:cover;min-height:420px;">
+            <img src="assets/images/476824610_1137533931400792_6034393920170034294_n.jpg" alt="ABUS Crane System" class="w-full h-full" style="display:block;border-radius:16px;object-fit:cover;min-height:420px;">
           </div>
         </div>
       </div>
@@ -858,7 +886,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- Cranes tile -->
       <a href="#products" class="quick-tile" style="height:280px;" data-nav="cranes">
-        <img src="assets/IMAGES/510470920_24612541661681714_3602699321719799358_n.jpg" alt="Cranes" class="quick-tile-image w-full h-full object-cover">
+        <img src="assets/images/510470920_24612541661681714_3602699321719799358_n.jpg" alt="Cranes" class="quick-tile-image w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(20,20,20,0.75) 0%,rgba(20,20,20,0.1) 60%);"></div>
         <div class="absolute bottom-0 left-0 right-0 p-6">
           <h3 class="font-display font-bold text-2xl text-white tracking-wide">Cranes</h3>
@@ -872,7 +900,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <!-- Hoists tile -->
       <a href="#" class="quick-tile" style="height:280px;" data-nav="hoists">
-        <img src="assets/IMAGES/ABUS-Electric%20Chain%20Hoist%202.jpg" alt="Hoists" class="quick-tile-image w-full h-full object-cover">
+        <img src="assets/images/ABUS-Electric%20Chain%20Hoist%202.jpg" alt="Hoists" class="quick-tile-image w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(20,20,20,0.75) 0%,rgba(20,20,20,0.1) 60%);"></div>
         <div class="absolute bottom-0 left-0 right-0 p-6">
           <h3 class="font-display font-bold text-2xl text-white tracking-wide">Hoists</h3>
@@ -886,7 +914,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <!-- Services tile -->
       <a href="#" class="quick-tile" style="height:280px;" data-nav="services">
-        <img src="assets/IMAGES/515949212_24738406609095218_2916188097253458783_n.jpg" alt="Services" class="quick-tile-image w-full h-full object-cover">
+        <img src="assets/images/515949212_24738406609095218_2916188097253458783_n.jpg" alt="Services" class="quick-tile-image w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20"></div>
         <div class="absolute bottom-0 left-0 right-0 p-6">
           <h3 class="font-display font-bold text-2xl text-white tracking-wide">Services</h3>
@@ -900,7 +928,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <!-- About tile -->
       <a href="#" class="quick-tile" style="height:280px;" data-nav="about">
-        <img src="assets/IMAGES/516592082_24738406232428589_4104805460922751093_n.jpg" alt="About Cimmerian Crane Services" class="quick-tile-image w-full h-full object-cover">
+        <img src="assets/images/516592082_24738406232428589_4104805460922751093_n.jpg" alt="About Cimmerian Crane Services" class="quick-tile-image w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(20,20,20,0.75) 0%,rgba(20,20,20,0.1) 60%);"></div>
         <div class="absolute bottom-0 left-0 right-0 p-6">
           <h3 class="font-display font-bold text-2xl text-white tracking-wide">About</h3>
@@ -959,12 +987,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Product grid -->
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-24">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="products">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="cranes-grid">
 
       <!-- Lightweight Mobile Gantry -->
       <div class="product-card stagger-card" data-category="gantry">
         <div class="card-image-wrap">
-          <img src="assets/IMAGES/ABUS-LightWeight%20Mobile%20Gantry.jpg" alt="Lightweight Mobile Gantry Crane">
+          <img src="assets/images/ABUS-LightWeight%20Mobile%20Gantry.jpg" alt="Lightweight Mobile Gantry Crane">
           <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Mobile Gantry</span>
         </div>
         <div class="p-6">
@@ -976,14 +1004,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li>Lightweight</li>
             <li>Optional electrical hoist travel or mobile control</li>
           </ul>
-          <a href="#" class="btn-ghost" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
+          <a href="#" class="btn-ghost" data-nav="lightweight-mobile-crane" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
         </div>
       </div>
 
       <!-- Overhead Travelling Crane -->
       <div class="product-card stagger-card" data-category="overhead">
         <div class="card-image-wrap">
-          <img src="assets/IMAGES/ABUS-Overhead%20Travelling%20Crane%201.jpg" alt="Overhead Travelling Crane">
+          <img src="assets/images/ABUS-Overhead%20Travelling%20Crane%201.jpg" alt="Overhead Travelling Crane">
           <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Overhead Crane</span>
         </div>
         <div class="p-6">
@@ -994,14 +1022,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li>Customisable components</li>
             <li>4 distinctive systems for different applications</li>
           </ul>
-          <a href="#" class="btn-ghost" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
+          <a href="#" class="btn-ghost" data-nav="overhead-travelling-crane" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
         </div>
       </div>
 
       <!-- Jib Crane -->
       <div class="product-card stagger-card" data-category="jib">
         <div class="card-image-wrap">
-          <img src="assets/IMAGES/ABUS-JIB%20CRANES%201.jpg" alt="Jib Crane">
+          <img src="assets/images/ABUS-JIB%20CRANES%202.jpg" alt="Jib Crane">
           <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Jib Crane</span>
         </div>
         <div class="p-6">
@@ -1013,10 +1041,447 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li>Lightweight and compact</li>
             <li>Pillar-mounted and wall-mounted types</li>
           </ul>
-          <a href="#" class="btn-ghost" data-nav="contact" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
+          <a href="#" class="btn-ghost" data-nav="jib-crane" style="padding:10px 24px;font-size:0.875rem;">Learn More</a>
         </div>
       </div>
 
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- VIEW: LIGHTWEIGHT MOBILE CRANE                                -->
+<!-- ============================================================ -->
+<section id="view-lightweight-mobile-crane" class="view" data-view="lightweight-mobile-crane">
+
+  <!-- Yellow header band -->
+  <div class="yellow-grain" style="background:var(--col-yellow);padding-top:100px;padding-bottom:40px;">
+    <div class="grain"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8" style="position:relative;z-index:2;">
+      <nav class="text-sm mb-4" style="color:var(--col-ink);">
+        <a href="#" data-nav="home" class="hover:underline">Home</a> <span>/</span> <a href="#" data-nav="cranes" class="hover:underline">Cranes</a> <span>/</span> Lightweight Mobile Gantry
+      </nav>
+      <h1 class="section-heading" style="color:var(--col-ink);">Lightweight Mobile Gantry Crane</h1>
+      <p class="body-text mt-4 max-w-3xl">
+        When a permanently installed hoist is not necessary but crane usage is needed at multiple workstations, the lightweight mobile gantry crane is the ideal solution.
+      </p>
+    </div>
+  </div>
+
+  <!-- Product details -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <!-- Left: Product image -->
+      <div>
+        <div class="rounded-2xl overflow-hidden" style="background:#FFFFFF;border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+          <img src="assets/images/ABUS-LightWeight_Mobile_Gantry_nobg.png" alt="Lightweight Mobile Gantry Crane" style="width:100%;display:block;aspect-ratio:16/10;object-fit:contain;background:#FFFFFF;">
+        </div>
+      </div>
+
+      <!-- Right: Details -->
+      <div>
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="block w-8 h-px" style="background:var(--col-yellow);"></span>
+            <span class="font-display font-bold text-sm tracking-[0.25em] uppercase" style="color:var(--col-yellow);">Mobile Gantry</span>
+          </div>
+          <h2 class="section-heading mb-5">Portable Lifting Solution<br>for Multiple Stations</h2>
+          <p class="body-text mb-6">
+            The ABUS lightweight mobile gantry crane offers exceptional flexibility when you need to move a crane between different workstations. With its compact design and steerable rollers, it can be easily positioned exactly where it's needed.
+          </p>
+          <p class="body-text mb-6">
+            Perfect for maintenance work, assembly operations, or workshops where a fixed installation isn't practical. The crane provides reliable lifting capability while being completely mobile.
+          </p>
+        </div>
+
+        <!-- Key specs -->
+        <div class="bg-white rounded-2xl p-6 mb-6" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+          <h3 class="card-heading text-lg mb-4">Key Specifications</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Load Capacity</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">Up to 2 tons</p>
+            </div>
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Mobility</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">4 steerable rollers</p>
+            </div>
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Control Options</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">Push-button or radio</p>
+            </div>
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Design</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">Compact & lightweight</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features list -->
+        <div class="mb-8">
+          <h3 class="card-heading text-lg mb-4">Features & Benefits</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Portable design with 4 steerable stop rollers for easy positioning</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Load capacity up to 2 tons SWL (Safe Working Load)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Lightweight construction for easy maneuverability</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Optional electrical hoist travel or mobile control systems</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Ideal for maintenance, assembly, and multi-station operations</span>
+            </li>
+          </ul>
+        </div>
+
+        <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related products -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-20">
+    <div class="mb-8">
+      <h2 class="section-heading">Other Crane Products</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Overhead Travelling Crane -->
+      <div class="product-card">
+        <div class="card-image-wrap">
+          <img src="assets/images/ABUS-Overhead%20Travelling%20Crane%201.jpg" alt="Overhead Travelling Crane">
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Overhead Travelling Crane</h3>
+          <p class="body-text mb-4">Suitable for the assembly, storage, transportation and warehousing of heavy and oversized objects.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 120 tons</li>
+            <li>Customisable components</li>
+            <li>4 distinctive systems for different applications</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="overhead-travelling-crane" style="padding:10px 24px;font-size:0.875rem;">View Details</a>
+        </div>
+      </div>
+
+      <!-- Jib Crane -->
+      <div class="product-card">
+        <div class="card-image-wrap">
+          <img src="assets/images/ABUS-JIB%20CRANES%202.jpg" alt="Jib Crane">
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Jib Crane</h3>
+          <p class="body-text mb-4">Suitable for lifting and handling objects in small or tight areas.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 6.3 tons SWL</li>
+            <li>Increased mobility due to area of rotation</li>
+            <li>Lightweight and compact</li>
+            <li>Pillar-mounted and wall-mounted types</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="jib-crane" style="padding:10px 24px;font-size:0.875rem;">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- VIEW: JIB CRANE                                                -->
+<!-- ============================================================ -->
+<section id="view-jib-crane" class="view" data-view="jib-crane">
+
+  <!-- Yellow header band -->
+  <div class="yellow-grain" style="background:var(--col-yellow);padding-top:100px;padding-bottom:40px;">
+    <div class="grain"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8" style="position:relative;z-index:2;">
+      <nav class="text-sm mb-4" style="color:var(--col-ink);">
+        <a href="#" data-nav="home" class="hover:underline">Home</a> <span>/</span> <a href="#" data-nav="cranes" class="hover:underline">Cranes</a> <span>/</span> Jib Crane
+      </nav>
+      <h1 class="section-heading" style="color:var(--col-ink);">Jib Crane</h1>
+      <p class="body-text mt-4 max-w-3xl">
+        Jib cranes are ideal for lifting and handling objects in small or tight areas, offering increased mobility through their rotational design.
+      </p>
+    </div>
+  </div>
+
+  <!-- Product details -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <!-- Left: Product image -->
+      <div>
+        <div class="rounded-2xl overflow-hidden" style="background:#FFFFFF;border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+          <img src="assets/images/ABUS-JIB_CRANES_2_nobg.png" alt="Jib Crane" style="width:100%;display:block;aspect-ratio:4/3;object-fit:contain;background:#FFFFFF;">
+        </div>
+      </div>
+
+      <!-- Right: Details -->
+      <div>
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="block w-8 h-px" style="background:var(--col-yellow);"></span>
+            <span class="font-display font-bold text-sm tracking-[0.25em] uppercase" style="color:var(--col-yellow);">Rotating Arm Design</span>
+          </div>
+          <h2 class="section-heading mb-5">Compact Lifting<br>for Confined Spaces</h2>
+          <p class="body-text mb-6">
+            The ABUS jib crane is specifically designed for applications where space is limited and precision lifting is required. Its pivoting arm provides excellent coverage of the work area without requiring the operator to move.
+          </p>
+          <p class="body-text mb-6">
+            Available in both pillar-mounted and wall-mounted configurations, jib cranes offer a cost-effective solution for lifting tasks in workshops, manufacturing cells, and maintenance stations.
+          </p>
+        </div>
+
+        <!-- Key specs -->
+        <div class="bg-white rounded-2xl p-6 mb-6" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+          <h3 class="card-heading text-lg mb-4">Key Specifications</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Load Capacity</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">Up to 6.3 tons SWL</p>
+            </div>
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Rotation</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">270° - 360°</p>
+            </div>
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Mounting Types</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">Pillar or wall</p>
+            </div>
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Design</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">Compact & lightweight</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features list -->
+        <div class="mb-8">
+          <h3 class="card-heading text-lg mb-4">Features & Benefits</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Increased mobility due to 270°-360° area of rotation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Load capacity up to 6.3 tons SWL (Safe Working Load)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Lightweight and compact design for easy installation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Available in pillar-mounted and wall-mounted types</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Perfect for maintenance areas, production cells, and workshops</span>
+            </li>
+          </ul>
+        </div>
+
+        <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related products -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-20">
+    <div class="mb-8">
+      <h2 class="section-heading">Other Crane Products</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Overhead Travelling Crane -->
+      <div class="product-card">
+        <div class="card-image-wrap">
+          <img src="assets/images/ABUS-Overhead%20Travelling%20Crane%201.jpg" alt="Overhead Travelling Crane">
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Overhead Travelling Crane</h3>
+          <p class="body-text mb-4">Suitable for the assembly, storage, transportation and warehousing of heavy and oversized objects.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 120 tons</li>
+            <li>Customisable components</li>
+            <li>4 distinctive systems for different applications</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="overhead-travelling-crane" style="padding:10px 24px;font-size:0.875rem;">View Details</a>
+        </div>
+      </div>
+
+      <!-- Lightweight Mobile Gantry -->
+      <div class="product-card">
+        <div class="card-image-wrap">
+          <img src="assets/images/ABUS-LightWeight%20Mobile%20Gantry.jpg" alt="Lightweight Mobile Gantry">
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Lightweight Mobile Gantry</h3>
+          <p class="body-text mb-4">Portable gantry crane ideal for multi-station operations and maintenance work.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 2 tons</li>
+            <li>4 steerable rollers</li>
+            <li>Lightweight and portable</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="lightweight-mobile-crane" style="padding:10px 24px;font-size:0.875rem;">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- VIEW: OVERHEAD TRAVELLING CRANE                               -->
+<!-- ============================================================ -->
+<section id="view-overhead-travelling-crane" class="view" data-view="overhead-travelling-crane">
+
+  <!-- Yellow header band -->
+  <div class="yellow-grain" style="background:var(--col-yellow);padding-top:100px;padding-bottom:40px;">
+    <div class="grain"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8" style="position:relative;z-index:2;">
+      <nav class="text-sm mb-4" style="color:var(--col-ink);">
+        <a href="#" data-nav="home" class="hover:underline">Home</a> <span>/</span> <a href="#" data-nav="cranes" class="hover:underline">Cranes</a> <span>/</span> Overhead Travelling Crane
+      </nav>
+      <h1 class="section-heading" style="color:var(--col-ink);">Overhead Travelling Crane</h1>
+      <p class="body-text mt-4 max-w-3xl">
+        Overhead travelling cranes are the workhorses of industrial lifting, suitable for assembly, storage, transportation and warehousing of heavy and oversized objects.
+      </p>
+    </div>
+  </div>
+
+  <!-- Product details -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <!-- Left: Product image -->
+      <div>
+        <div class="rounded-2xl overflow-hidden" style="background:#FFFFFF;border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+          <img src="assets/images/ABUS-Overhead_Travelling_Crane_1_nobg.png" alt="Overhead Travelling Crane" style="width:100%;display:block;aspect-ratio:4/3;object-fit:contain;background:#FFFFFF;">
+        </div>
+      </div>
+
+      <!-- Right: Details -->
+      <div>
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="block w-8 h-px" style="background:var(--col-yellow);"></span>
+            <span class="font-display font-bold text-sm tracking-[0.25em] uppercase" style="color:var(--col-yellow);">Heavy-Duty Lifting</span>
+          </div>
+          <h2 class="section-heading mb-5">Industrial Strength<br>Material Handling</h2>
+          <p class="body-text mb-6">
+            The ABUS overhead travelling crane is the ultimate solution for heavy industrial applications. Designed to handle loads up to 120 tons, these cranes provide reliable, efficient material handling for the toughest jobs.
+          </p>
+          <p class="body-text mb-6">
+            With fully customizable components and four distinctive system configurations, the overhead travelling crane can be tailored to meet your specific operational requirements, whether for warehousing, assembly lines, or heavy manufacturing.
+          </p>
+        </div>
+
+        <!-- Key specs -->
+        <div class="bg-white rounded-2xl p-6 mb-6" style="border:0.5px solid var(--col-border);box-shadow:0 2px 8px rgba(0,0,0,0.06),0 8px 32px rgba(0,0,0,0.08);">
+          <h3 class="card-heading text-lg mb-4">Key Specifications</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Load Capacity</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">Up to 120 tons</p>
+            </div>
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">System Types</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">4 configurations</p>
+            </div>
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Customization</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">Fully customizable</p>
+            </div>
+            <div>
+              <p class="text-sm" style="color:var(--col-ink-soft);">Applications</p>
+              <p class="font-bold text-xl" style="color:var(--col-ink);">Heavy industrial</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features list -->
+        <div class="mb-8">
+          <h3 class="card-heading text-lg mb-4">Features & Benefits</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Highest load capacity in the ABUS crane range — up to 120 tons SWL</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Four distinctive system configurations for varied applications</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Fully customizable components to match your facility requirements</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">Ideal for assembly, storage, transportation, and warehousing operations</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full mt-2 shrink-0" style="background:var(--col-yellow);"></span>
+              <span class="body-text">German engineering with exceptional durability and reliability</span>
+            </li>
+          </ul>
+        </div>
+
+        <a href="#" class="btn-primary" data-nav="contact">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related products -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-20">
+    <div class="mb-8">
+      <h2 class="section-heading">Other Crane Products</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Jib Crane -->
+      <div class="product-card">
+        <div class="card-image-wrap">
+          <img src="assets/images/ABUS-JIB%20CRANES%202.jpg" alt="Jib Crane">
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Jib Crane</h3>
+          <p class="body-text mb-4">Suitable for lifting and handling objects in small or tight areas.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 6.3 tons SWL</li>
+            <li>Increased mobility due to area of rotation</li>
+            <li>Lightweight and compact</li>
+            <li>Pillar-mounted and wall-mounted types</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="jib-crane" style="padding:10px 24px;font-size:0.875rem;">View Details</a>
+        </div>
+      </div>
+
+      <!-- Lightweight Mobile Gantry -->
+      <div class="product-card">
+        <div class="card-image-wrap">
+          <img src="assets/images/ABUS-LightWeight%20Mobile%20Gantry.jpg" alt="Lightweight Mobile Gantry">
+        </div>
+        <div class="p-6">
+          <h3 class="card-heading mb-2">Lightweight Mobile Gantry</h3>
+          <p class="body-text mb-4">Portable gantry crane ideal for multi-station operations and maintenance work.</p>
+          <ul class="text-sm space-y-1.5 mb-6" style="color:var(--col-ink-soft);">
+            <li>Load capacity up to 2 tons</li>
+            <li>4 steerable rollers</li>
+            <li>Lightweight and portable</li>
+          </ul>
+          <a href="#" class="btn-ghost" data-nav="lightweight-mobile-crane" style="padding:10px 24px;font-size:0.875rem;">View Details</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1042,12 +1507,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Product grid -->
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 mb-8">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="hoists">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="hoists-grid">
 
       <!-- Wire Rope Hoist -->
       <div class="product-card stagger-card">
         <div class="card-image-wrap">
-          <img src="assets/IMAGES/ABUS-Wire%20Rope%20Hoist%201.jpg" alt="Wire Rope Hoist">
+          <img src="assets/images/ABUS-Wire%20Rope%20Hoist%201.jpg" alt="Wire Rope Hoist">
           <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Wire Rope</span>
         </div>
         <div class="p-6">
@@ -1066,7 +1531,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Electric Chain Hoist -->
       <div class="product-card stagger-card">
         <div class="card-image-wrap">
-          <img src="assets/IMAGES/ABUS-Electric%20Chain%20Hoist%201.jpg" alt="Electric Chain Hoist">
+          <img src="assets/images/ABUS-Electric%20Chain%20Hoist%201.jpg" alt="Electric Chain Hoist">
           <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">Chain Hoist</span>
         </div>
         <div class="p-6">
@@ -1084,7 +1549,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- HB System -->
       <div class="product-card stagger-card">
         <div class="card-image-wrap">
-          <img src="assets/IMAGES/ABUS-HB%20System%201.jpg" alt="ABUS HB System">
+          <img src="assets/images/ABUS-HB%20System%201.jpg" alt="ABUS HB System">
           <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full text-white" style="background:var(--col-blue);">HB System</span>
         </div>
         <div class="p-6">
@@ -1333,7 +1798,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="hero-geometric">
-          <img src="assets/IMAGES/515949212_24738406609095218_2916188097253458783_n.jpg" alt="Cimmerian Crane Services" class="w-full" style="display:block;border-radius:16px;">
+          <img src="assets/images/515949212_24738406609095218_2916188097253458783_n.jpg" alt="Cimmerian Crane Services" class="w-full" style="display:block;border-radius:16px;">
         </div>
 
         <!-- Partners -->
@@ -1666,6 +2131,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div>
+        <h4 class="font-display font-semibold text-sm text-white tracking-widest uppercase mb-4">Cranes</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="lightweight-mobile-crane">Lightweight Mobile Gantry</a></li>
+          <li><a href="#" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="jib-crane">Jib Crane</a></li>
+          <li><a href="#" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="overhead-travelling-crane">Overhead Travelling Crane</a></li>
+        </ul>
+      </div>
+      <div>
         <h4 class="font-display font-semibold text-sm text-white tracking-widest uppercase mb-4">Services</h4>
         <ul class="space-y-2">
           <li><a href="#" class="text-sm hover:text-yellow" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 200ms;" data-nav="services">Repair &amp; Maintenance</a></li>
@@ -1743,7 +2216,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const href = this.getAttribute('href') || '';
 
       // If this link points to an anchor within the target view, still switch view first
-      if (href.startsWith('#')) {
+      if (href && href.startsWith('#')) {
         e.preventDefault();
         switchView(viewName);
         // After view switches, scroll to anchor (deferred to let view render)
@@ -1796,6 +2269,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenuOpen) closeMobileMenu();
   });
+
+  // ===== Cranes Dropdown (Desktop) =====
+  const cranesNavLink = document.querySelector('[data-nav="cranes"]');
+  const cranesDropdown = document.getElementById('cranes-dropdown');
+  let dropdownActive = false;
+
+  if (cranesNavLink && cranesDropdown) {
+    // Show dropdown on hover
+    cranesNavLink.addEventListener('mouseenter', () => {
+      if (window.innerWidth >= 1024) {
+        dropdownActive = true;
+        cranesDropdown.classList.add('is-visible');
+      }
+    });
+
+    cranesDropdown.addEventListener('mouseenter', () => {
+      if (window.innerWidth >= 1024) {
+        dropdownActive = true;
+        cranesDropdown.classList.add('is-visible');
+      }
+    });
+
+    // Hide dropdown when mouse leaves both nav link and dropdown
+    const hideDropdown = () => {
+      dropdownActive = false;
+      cranesDropdown.classList.remove('is-visible');
+    };
+
+    cranesDropdown.addEventListener('mouseleave', hideDropdown);
+    cranesNavLink.addEventListener('mouseleave', (e) => {
+      // Only hide if not moving into the dropdown
+      setTimeout(() => {
+        if (!dropdownActive) {
+          cranesDropdown.classList.remove('is-visible');
+        }
+      }, 10);
+    });
+
+    // Also hide dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (dropdownActive && !cranesNavLink.contains(e.target) && !cranesDropdown.contains(e.target)) {
+        hideDropdown();
+      }
+    });
+  }
 
   // ===== Navbar scroll refinement =====
   const navbar = document.getElementById('navbar');

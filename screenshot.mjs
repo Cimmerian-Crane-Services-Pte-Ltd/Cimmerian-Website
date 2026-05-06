@@ -1,19 +1,21 @@
 import puppeteer from 'puppeteer';
 
-const BASE = 'http://localhost:3000';
+const BASE = 'http://localhost:3001';
 
 function delay(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
 
-async function switchViewAndScreenshot(browser, filename, clickSelector, viewport) {
+async function captureView(browser, filename, viewName, viewport) {
   const page = await browser.newPage();
   await page.setViewport(viewport || { width: 1440, height: 900 });
   await page.goto(BASE, { waitUntil: 'networkidle0', timeout: 30000 });
   await delay(300);
 
-  // Click the nav link to switch view
-  await page.click(clickSelector);
+  // Switch view programmatically
+  await page.evaluate((v) => {
+    if (typeof switchView === 'function') switchView(v);
+  }, viewName);
   await delay(600);
 
   await page.screenshot({ path: filename, fullPage: true });
@@ -36,19 +38,25 @@ async function switchViewAndScreenshot(browser, filename, clickSelector, viewpor
   console.log('Screenshot: screenshot_home_desktop.png');
 
   // Cranes
-  await switchViewAndScreenshot(browser, 'screenshot_cranes_desktop.png', '[data-nav="cranes"]');
+  await captureView(browser, 'screenshot_cranes_desktop.png', 'cranes');
+
+  // Jib Crane
+  await captureView(browser, 'screenshot_jib_crane_desktop.png', 'jib-crane');
+
+  // Overhead Travelling Crane
+  await captureView(browser, 'screenshot_overhead_crane_desktop.png', 'overhead-travelling-crane');
 
   // Services
-  await switchViewAndScreenshot(browser, 'screenshot_services_desktop.png', '[data-nav="services"]');
+  await captureView(browser, 'screenshot_services_desktop.png', 'services');
 
   // Hoists
-  await switchViewAndScreenshot(browser, 'screenshot_hoists_desktop.png', '[data-nav="hoists"]');
+  await captureView(browser, 'screenshot_hoists_desktop.png', 'hoists');
 
   // Contact
-  await switchViewAndScreenshot(browser, 'screenshot_contact_desktop.png', '[data-nav="contact"]');
+  await captureView(browser, 'screenshot_contact_desktop.png', 'contact');
 
   // About
-  await switchViewAndScreenshot(browser, 'screenshot_about_desktop.png', '[data-nav="about"]');
+  await captureView(browser, 'screenshot_about_desktop.png', 'about');
 
   console.log('--- Mobile Screenshots ---');
 
@@ -66,15 +74,19 @@ async function switchViewAndScreenshot(browser, filename, clickSelector, viewpor
   await cranesMobile.setViewport({ width: 375, height: 812 });
   await cranesMobile.goto(BASE, { waitUntil: 'networkidle0', timeout: 30000 });
   await delay(300);
-  // Open hamburger menu on mobile
   await cranesMobile.click('#hamburgerBtn');
   await delay(400);
-  // Click mobile nav link
   await cranesMobile.click('[data-mobile-nav="cranes"]');
   await delay(600);
   await cranesMobile.screenshot({ path: 'screenshot_cranes_mobile.png', fullPage: true });
   await cranesMobile.close();
   console.log('Screenshot: screenshot_cranes_mobile.png');
+
+  // Jib Crane mobile
+  await captureView(browser, 'screenshot_jib_crane_mobile.png', 'jib-crane', { width: 375, height: 812 });
+
+  // Overhead Travelling Crane mobile
+  await captureView(browser, 'screenshot_overhead_crane_mobile.png', 'overhead-travelling-crane', { width: 375, height: 812 });
 
   await browser.close();
   console.log('All screenshots done');

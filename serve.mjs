@@ -2,7 +2,7 @@ import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
 
-const PORT = 3000;
+const PORT = 3001;
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -16,6 +16,9 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
   let urlPath = req.url.split("?")[0];
   if (urlPath === "/") urlPath = "/index.html";
+
+  // Decode URL-encoded characters (like %20 for spaces)
+  urlPath = decodeURIComponent(urlPath);
 
   const filePath = path.join(process.cwd(), urlPath);
   const ext = path.extname(filePath);
