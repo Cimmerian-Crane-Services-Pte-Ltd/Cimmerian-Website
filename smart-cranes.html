@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ABUControl Smart Crane Technology by Cimmerian Crane Services. Anti-sway control, synchronisation, KranOS monitoring, and modular control systems.">
+  <title>Smart Cranes | ABUControl Technology | Cimmerian Crane Services</title>
+  <link rel="icon" type="image/png" href="assets/Cimmerian_Logo_nobg.png">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T39DZ5H');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Smart Cranes Page Styles -->
+  <style>
+    :root {
+      --abus-yellow: #FFC72C;
+    }
+
+    /* SVG noise texture as global background grain */
+    .smart-page::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    /* Tech-grid background for alternating sections */
+    .tech-grid-bg {
+      position: relative;
+      background-color: var(--color-bg-dark);
+      background-image:
+        linear-gradient(var(--color-accent-glow) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-accent-glow) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Smart Cranes Page Header */
+    .smart-page .page-header {
+      background: linear-gradient(135deg, #0d1117 0%, #1a1d24 50%, #0d1117 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .smart-page .page-header-bg {
+      opacity: 0.25;
+    }
+
+    .smart-page .page-header-overlay {
+      background: linear-gradient(
+        135deg,
+        rgba(13, 17, 23, 0.92) 0%,
+        rgba(26, 29, 36, 0.75) 40%,
+        rgba(0, 85, 255, 0.06) 100%
+      );
+    }
+
+    /* Accent badge above title */
+    .smart-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 85, 255, 0.08);
+      border: 1px solid rgba(0, 85, 255, 0.25);
+      padding: 0.4rem 1.25rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #6ec6ff;
+      margin-bottom: 1.5rem;
+    }
+
+    .smart-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      box-shadow: 0 0 12px rgba(0, 85, 255, 0.6);
+      animation: smart-pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes smart-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.75); }
+    }
+
+    /* Smart Cranes Page Header Title */
+    .smart-page .page-header h1 {
+      background: linear-gradient(135deg, #e2e8f0 0%, #6ec6ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ===== Overview Section with Blue Accent ===== */
+    .overview-accent {
+      background-color: var(--color-bg-dark);
+      position: relative;
+    }
+
+    .overview-accent::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0, 85, 255, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .smart-page .overview-text h2 {
+      border-left: 3px solid var(--color-accent);
+      padding-left: 1.25rem;
+    }
+
+    /* Spec card with blue accent */
+    .spec-card.accent-blue {
+      border-color: rgba(0, 85, 255, 0.2);
+      background: linear-gradient(160deg, rgba(0, 85, 255, 0.04) 0%, var(--color-bg-steel) 100%);
+    }
+
+    .spec-card.accent-blue h3 {
+      color: #6ec6ff;
+    }
+
+    /* ===== Feature Showcase: Full-Bleed Alternating ===== */
+    .feature-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .feature-showcase.reverse {
+      direction: rtl;
+    }
+
+    .feature-showcase.reverse > * {
+      direction: ltr;
+    }
+
+    .showcase-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+    }
+
+    .showcase-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .showcase-visual:hover img {
+      transform: scale(1.06);
+    }
+
+    .showcase-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 29, 36, 0.8) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Blue edge bar on image side */
+    .showcase-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 3px;
+      background: var(--color-accent);
+      z-index: 2;
+    }
+
+    .feature-showcase:not(.reverse) .showcase-visual::before {
+      right: 0;
+    }
+
+    .feature-showcase.reverse .showcase-visual::before {
+      left: 0;
+    }
+
+    .showcase-content {
+      padding: 4rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: var(--color-bg-steel);
+    }
+
+    .showcase-content .feature-number {
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      font-weight: 700;
+      color: rgba(0, 85, 255, 0.1);
+      line-height: 1;
+      margin-bottom: -1rem;
+      letter-spacing: -0.04em;
+    }
+
+    .showcase-content h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+    }
+
+    .showcase-content .feature-tagline {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #6ec6ff;
+      margin-bottom: 1.5rem;
+    }
+
+    .showcase-content p {
+      color: var(--color-text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    /* Compact Feature Showcase: same content, smaller image */
+    .feature-showcase.compact-showcase .showcase-visual {
+      min-height: 280px;
+    }
+
+    .feature-showcase.compact-showcase .showcase-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ===== Feature Tiles (ABUControl sub-features) ===== */
+    .feature-tiles-section {
+      background-color: #0d1117;
+    }
+
+    .feature-tiles-section .section-title {
+      background: linear-gradient(135deg, #e2e8f0 0%, rgba(110, 198, 255, 0.7) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .smart-feature-tile {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(0, 85, 255, 0.1);
+      border-radius: 6px;
+      padding: 2rem 1.5rem;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .smart-feature-tile::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .smart-feature-tile:hover {
+      border-color: rgba(0, 85, 255, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 85, 255, 0.1);
+    }
+
+    .smart-feature-tile:hover::before {
+      opacity: 1;
+    }
+
+    .smart-feature-icon {
+      width: 56px; height: 56px;
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(0, 85, 255, 0.2);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.5rem;
+      color: var(--color-accent);
+    }
+
+    .smart-feature-tile .feature-label {
+      color: var(--color-text-primary);
+      font-size: 1.05rem;
+    }
+
+    .smart-feature-tile .feature-desc {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== Comfort Package Highlight ===== */
+    .comfort-package {
+      background: linear-gradient(160deg, #0d1117 0%, var(--color-bg-dark) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .comfort-package::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0, 85, 255, 0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .comfort-card {
+      background: linear-gradient(160deg, rgba(0, 85, 255, 0.06) 0%, rgba(0, 85, 255, 0.01) 100%);
+      border: 1px solid rgba(0, 85, 255, 0.2);
+      border-radius: 8px;
+      padding: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .comfort-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      border-radius: 8px 8px 0 0;
+    }
+
+    .comfort-includes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .comfort-item {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0, 85, 255, 0.1);
+      border-radius: 6px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .comfort-item .check {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .comfort-item span {
+      color: var(--color-text-primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* ===== KranOS Section ===== */
+    .kranos-section {
+      background-color: var(--color-bg-steel);
+      position: relative;
+    }
+
+    .kranos-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 50%; height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(0, 85, 255, 0.02) 100%);
+      pointer-events: none;
+    }
+
+    .kranos-badge {
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(0, 85, 255, 0.2);
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #6ec6ff;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+
+    .kranos-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .kranos-feature-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border: 1px solid rgba(0, 85, 255, 0.08);
+      border-radius: 6px;
+      transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .kranos-feature-item:hover {
+      border-color: rgba(0, 85, 255, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .kranos-feature-item .kf-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .kranos-feature-item .kf-label {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-primary);
+    }
+
+    /* ===== Enquiry Band (Blue Variant) ===== */
+    .enquiry-band.smart-band {
+      background: linear-gradient(135deg, #0d1117, var(--color-bg-dark));
+      border-color: rgba(0, 85, 255, 0.15);
+    }
+
+    .enquiry-band.smart-band p {
+      background: linear-gradient(135deg, #e2e8f0, #6ec6ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .feature-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-showcase.reverse {
+        direction: ltr;
+      }
+
+      .showcase-visual {
+        min-height: 280px;
+      }
+
+      .showcase-visual::before {
+        top: 0;
+        bottom: auto;
+        width: 100%;
+        height: 3px;
+      }
+
+      .showcase-content {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .comfort-includes {
+        grid-template-columns: 1fr;
+      }
+
+      .kranos-features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body class="smart-page">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T39DZ5H"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- =========================================
+       Header & Navigation
+       ========================================= -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/Cimmerian_Logo_nobg.png" alt="Cimmerian Crane Services" class="logo-img">
+        <span class="logo-text">Cimmerian<br>Crane Services</span>
+      </a>
+
+      <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="cranes.html" class="nav-link">Cranes</a></li>
+          <li><a href="hoists.html" class="nav-link">Hoists</a></li>
+          <li><a href="smart-cranes.html" class="nav-link active">Smart Cranes</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================
+         Hero Section
+         ========================================= -->
+    <section class="page-header">
+      <img src="assets/ABUS IMAGES/ABUControl1.jpg" alt="ABUControl smart crane system" class="page-header-bg">
+      <div class="page-header-overlay"></div>
+      <div class="page-header-content" data-aos="fade-up">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">&gt;</span>
+          <span>Smart Cranes</span>
+        </div>
+        <div class="smart-badge">ABUControl Technology</div>
+        <h1>Smart Cranes</h1>
+        <p>Intelligent crane control systems that lift precision, safety, and productivity to an entirely new level.</p>
+      </div>
+    </section>
+
+    <!-- =========================================
+         Overview: What is ABUControl
+         ========================================= -->
+    <section class="section overview-accent">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-text" data-aos="fade-right">
+            <h2>ABUControl: Intelligence Built into Every Movement</h2>
+            <p>ABUControl is ABUS's flagship smart crane control system — engineered to elevate operator experience, load precision, and maintenance intelligence into one unified platform. Functions are tuned to your specific area of application, with intuitive ease of use and a modern interface for real-time monitoring and configuration.</p>
+            <p>Built on open, industry-standard components from renowned electronics manufacturers, ABUControl gives you full ownership of your crane — no proprietary lock-in, no specialist-only licenses. Service and repair remain entirely in your hands.</p>
+          </div>
+          <div class="spec-card accent-blue" data-aos="fade-left">
+            <h3>System Capabilities</h3>
+            <div class="spec-item">
+              <span class="spec-label">Anti-Sway Control</span>
+              <span class="spec-value">Active Damping</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Travel Profiles</span>
+              <span class="spec-value">Adaptive</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Hoist Sync</span>
+              <span class="spec-value">Up to 4 Hoists</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Remote Interface</span>
+              <span class="spec-value">ABURemote / KranOS</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Components</span>
+              <span class="spec-value">Open Standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         Feature Showcase 1: Anti-Sway Control
+         ========================================= -->
+    <div class="feature-showcase" data-aos="fade-up">
+      <div class="showcase-visual">
+        <img src="assets/ABUS IMAGES/ABUControl.jpg" alt="ABUControl anti-sway crane system">
+      </div>
+      <div class="showcase-content">
+        <span class="feature-number">01</span>
+        <p class="feature-tagline">Precision &amp; Safety</p>
+        <h2>Anti-Sway Control</h2>
+        <p>The ABUS sway control system increases safety and convenience during the transport of goods in sensitive areas. Powered by real-time mathematical calculations that factor in travel speeds, acceleration and deceleration of both crane and hoist, hook position, and the length of the load lifting attachment.</p>
+        <p>Even operators who rarely use cranes can handle loads safely and precisely thanks to automatic sway dampening on every axis.</p>
+      </div>
+    </div>
+
+    <!-- =========================================
+         Feature Showcase 2: Synchronisation
+         ========================================= -->
+    <div class="feature-showcase reverse tech-grid-bg" data-aos="fade-up">
+      <div class="showcase-visual">
+        <img src="assets/ABUS IMAGES/ABUControl1.jpg" alt="ABUS crane synchronisation system">
+      </div>
+      <div class="showcase-content">
+        <span class="feature-number">02</span>
+        <p class="feature-tagline">Multi-Hoist Coordination</p>
+        <h2>Synchronisation Control</h2>
+        <p>The ABUS synchronisation system enables safe handling of long products with two hoists mounted on a single crane — divergence of lifting speeds is prevented through constant closed-loop regulation, even when different wire rope hoists are used simultaneously.</p>
+        <p>The system scales to two cranes with a maximum of four hoists operating in tandem travel motions, all coordinated and regulated from a single ABUControl unit.</p>
+      </div>
+    </div>
+
+    <!-- =========================================
+         Feature Showcase 3: Travel & Hoist Profiles
+         ========================================= -->
+    <div class="feature-showcase compact-showcase" data-aos="fade-up">
+      <div class="showcase-visual">
+        <img src="assets/ABUS IMAGES/ABURemote2.jpg" alt="ABURemote crane operator control">
+      </div>
+      <div class="showcase-content">
+        <span class="feature-number">03</span>
+        <p class="feature-tagline">Adaptive Motion</p>
+        <h2>Travel &amp; Hoist Profiles</h2>
+        <p>ABUControl-equipped cranes adapt to your application through configurable travel and hoist profiles. A crane running two fixed speeds behaves entirely differently from one driven by a frequency converter — and profiles let operators switch between them instantly.</p>
+        <p>Operators no longer need to manually adjust existing cranes for each task. Pre-configured profiles increase productivity and make the transition to a new crane system seamless for every team.</p>
+      </div>
+    </div>
+
+    <!-- =========================================
+         KranOS Section
+         ========================================= -->
+    <section class="section kranos-section">
+      <div class="container" style="position:relative; z-index:1;">
+        <div class="overview-grid">
+          <div class="showcase-image" data-aos="fade-right">
+            <img src="assets/ABUS IMAGES/ABURemote1.jpg"
+                 alt="ABURemote pendant with KranOS interface"
+                 style="width:100%; height:400px; object-fit:cover; border-radius:6px; border:1px solid rgba(0,85,255,0.12);">
+          </div>
+          <div data-aos="fade-left" style="padding: 1rem 0;">
+            <span class="kranos-badge">KranOS Interface</span>
+            <h2 style="font-size:clamp(1.75rem,3vw,2.25rem); color:var(--color-text-primary); margin-bottom:0.75rem; text-transform:uppercase; letter-spacing:0.02em;">Ease of Service</h2>
+            <p style="color:var(--color-text-secondary); line-height:1.75; margin-bottom:1rem;">KranOS puts operating data, settings, and service information at your fingertips. Access the dashboard wirelessly from any laptop or tablet with a browser — no special hardware required.</p>
+            <p style="color:var(--color-text-secondary); line-height:1.75;">Annual inspections are dramatically sped up with real-time data visibility into every parameter of your crane's operation. Diagnostics become instant, not scheduled.</p>
+            <div class="kranos-features">
+              <div class="kranos-feature-item">
+                <div class="kf-icon">&#128187;</div>
+                <div class="kf-label">Web Dashboard</div>
+              </div>
+              <div class="kranos-feature-item">
+                <div class="kf-icon">&#9889;</div>
+                <div class="kf-label">Real-Time Data</div>
+              </div>
+              <div class="kranos-feature-item">
+                <div class="kf-icon">&#128202;</div>
+                <div class="kf-label">Inspection Logs</div>
+              </div>
+              <div class="kranos-feature-item">
+                <div class="kf-icon">&#128241;</div>
+                <div class="kf-label">Wireless Access</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         Modularity Section
+         ========================================= -->
+    <section class="section feature-tiles-section tech-grid-bg">
+      <div class="container" style="max-width:var(--container-max-width);">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Modular by Design</h2>
+          <p class="section-subtitle">ABUControl relies on tried-and-trusted, freely available components from renowned electronics manufacturers. Replacement or repair requires neither specialist knowledge nor proprietary software licenses.</p>
+        </div>
+        <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+          <div class="smart-feature-tile" data-aos="fade-up" data-aos-delay="100">
+            <div class="smart-feature-icon">&#9881;</div>
+            <h3 class="feature-label">Open Components</h3>
+            <p class="feature-desc">Industry-standard electronics from globally trusted manufacturers. Source replacements from any qualified supplier.</p>
+          </div>
+          <div class="smart-feature-tile" data-aos="fade-up" data-aos-delay="200">
+            <div class="smart-feature-icon">&#128274;</div>
+            <h3 class="feature-label">No Vendor Lock-In</h3>
+            <p class="feature-desc">You remain in complete control of the crane at all times. Choose any service partner — software licenses are not required.</p>
+          </div>
+          <div class="smart-feature-tile" data-aos="fade-up" data-aos-delay="300">
+            <div class="smart-feature-icon">&#128295;</div>
+            <h3 class="feature-label">Rapid Service</h3>
+            <p class="feature-desc">Standardised modular components minimise downtime. Swap, repair, or replace with minimal specialist intervention.</p>
+          </div>
+          <div class="smart-feature-tile" data-aos="fade-up" data-aos-delay="400">
+            <div class="smart-feature-icon">&#9745;</div>
+            <h3 class="feature-label">Long-Term Support</h3>
+            <p class="feature-desc">A unique promise for simple maintenance and repairs throughout the full lifecycle of your crane system.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         ABUControl Comfort Package
+         ========================================= -->
+    <section class="section comfort-package">
+      <div class="container" style="max-width:900px;">
+        <div class="comfort-card" data-aos="fade-up">
+          <span class="kranos-badge" style="margin-bottom:0.75rem;">Featured Package</span>
+          <h2 style="font-size:clamp(1.75rem,3vw,2.25rem); color:var(--color-text-primary); margin-bottom:0.75rem; text-transform:uppercase; letter-spacing:0.02em;">ABUControl Comfort</h2>
+          <p style="color:var(--color-text-secondary); line-height:1.75;">The complete intelligent crane system — combining core ABUControl with premium operator and drive packages for full application-level adaptability.</p>
+
+          <div class="comfort-includes">
+            <div class="comfort-item">
+              <span class="check">&#10003;</span>
+              <span>ABUControl Core Controller</span>
+            </div>
+            <div class="comfort-item">
+              <span class="check">&#10003;</span>
+              <span>ABURemote Button Radio Remote</span>
+            </div>
+            <div class="comfort-item">
+              <span class="check">&#10003;</span>
+              <span>ABULiner Frequency Converter</span>
+            </div>
+            <div class="comfort-item">
+              <span class="check">&#10003;</span>
+              <span>LED Matrix Display</span>
+            </div>
+          </div>
+
+          <p style="color:var(--color-text-secondary); line-height:1.75; margin-top:1.25rem; font-size:0.95rem;">ABULiner frequency converter provides stepless control for cross and long travel motions, enabling precise positioning and smoother load handling throughout every operation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         Video Demonstrations
+         ========================================= -->
+    <section class="section video-demonstrations">
+      <style>
+        .video-demonstrations {
+          background-color: var(--color-bg-dark);
+          position: relative;
+        }
+
+        .video-demonstrations::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: radial-gradient(circle at 80% 20%, rgba(0, 85, 255, 0.05) 0%, transparent 50%);
+          pointer-events: none;
+        }
+
+        .video-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.5rem;
+          margin-top: 3rem;
+        }
+
+        .video-card {
+          position: relative;
+          border-radius: 8px;
+          overflow: hidden;
+          background: var(--color-bg-steel);
+          border: 1px solid rgba(0, 85, 255, 0.12);
+          transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                      box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .video-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.6),
+                      0 0 30px rgba(0, 85, 255, 0.08);
+        }
+
+        .video-container {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          background: #000;
+        }
+
+        .video-container iframe {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          border: none;
+        }
+
+        .video-caption {
+          padding: 1.25rem 1.5rem;
+        }
+
+        .video-caption h4 {
+          color: var(--color-text-primary);
+          font-size: 1rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .video-caption p {
+          color: var(--color-text-secondary);
+          font-size: 0.9rem;
+          line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+          .video-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+        }
+      </style>
+
+      <div class="container" style="max-width: 1300px; position: relative; z-index: 1;">
+        <div class="section-header" style="text-align: center; margin-bottom: 1rem;" data-aos="fade-up">
+          <h2 class="section-title" style="background: linear-gradient(135deg, #e2e8f0 0%, rgba(110, 198, 255, 0.7) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">See ABUControl in Action</h2>
+          <p class="section-subtitle" style="color: var(--color-text-secondary); max-width: 650px; margin: 1rem auto 0; line-height: 1.7;">Experience the precision, safety, and seamless coordination of intelligent crane technology through real-world demonstrations.</p>
+        </div>
+
+        <div class="video-grid">
+          <!-- Video 1 -->
+          <div class="video-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="video-container">
+              <iframe
+                src="https://www.youtube.com/embed/7bTx91c1sRk?rel=0"
+                title="ABUControl Smart Crane Demonstration"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-caption">
+              <h4>Precision Anti-Sway Control</h4>
+              <p>Watch how ABUControl eliminates load oscillation for safe, pinpoint-accurate handling in sensitive environments.</p>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="video-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="video-container">
+              <iframe
+                src="https://www.youtube.com/embed/i_FBZa3F3AY?rel=0"
+                title="ABUS Crane Synchronisation System"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-caption">
+              <h4>Multi-Hoist Synchronisation</h4>
+              <p>See the seamless coordination of multiple hoists working in perfect harmony to handle long or heavy loads safely.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         Enquiry CTA Band
+         ========================================= -->
+    <section class="enquiry-band smart-band" data-aos="fade-up">
+      <p>Ready to upgrade your crane with intelligent control?</p>
+      <a href="contact.html" class="btn btn-primary">Request a Consultation</a>
+    </section>
+  </main>
+
+  <!-- =========================================
+       Footer
+       ========================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <img src="assets/Cimmerian_Logo_nobg.png" alt="Cimmerian Crane Services" class="logo-img">
+            <span class="logo-text"><span style="display:block; white-space:nowrap;">Cimmerian</span><span style="display:block; white-space:nowrap;">Crane Services</span></span>
+          </a>
+          <p class="footer-text">Your trusted partner in heavy industrial material handling, providing precision-engineered lifting solutions for over three decades.</p>
+        </div>
+
+        <div class="footer-nav">
+          <h4 class="footer-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="overhead-cranes.html">Overhead Cranes</a></li>
+            <li><a href="jib-cranes.html">Jib Cranes</a></li>
+            <li><a href="gantry-cranes.html">Gantry Cranes</a></li>
+            <li><a href="mobile-gantry-cranes.html">Mobile Gantries</a></li>
+            <li><a href="hb-systems.html">HB Systems</a></li>
+            <li><a href="hoists.html">Hoists</a></li>
+            <li><a href="smart-cranes.html">Smart Cranes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav">
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4 class="footer-title">Contact Info</h4>
+          <ul class="footer-links">
+            <li>75 Tuas Ave 1, Singapore 639513</li>
+            <li><a href="tel:+6562663378">+65 6266 3378</a></li>
+            <li><a href="mailto:Services@cimmeriancrane.com">Services@cimmeriancrane.com</a></li>
+            <li style="white-space:nowrap;">Hours: Mon - Fri, 8:00AM - 5:00PM SGT</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Cimmerian Crane Services. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
