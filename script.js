@@ -25,11 +25,35 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-link').forEach(link => {
+    // Mobile Dropdown Toggle
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        // Only intercept on mobile to allow expansion
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = toggle.parentElement;
+          // Close other open dropdowns
+          document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+            if (item !== parent) {
+              item.classList.remove('active');
+            }
+          });
+          parent.classList.toggle('active');
+        }
+      });
+    });
+
+    // Close menu when clicking a link (including dropdown links)
+    document.querySelectorAll('.nav-link, .dropdown-menu a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        // Also close any open dropdowns
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+          item.classList.remove('active');
+        });
       });
     });
   }
