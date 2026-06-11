@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close menu when clicking a link (including dropdown links)
-    document.querySelectorAll('.nav-link, .dropdown-menu a').forEach(link => {
+    // Close menu when clicking a link (excluding dropdown toggles)
+    document.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-menu a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
