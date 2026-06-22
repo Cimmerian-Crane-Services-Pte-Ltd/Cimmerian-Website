@@ -35,11 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
     navOverlay.setAttribute('aria-hidden', 'true');
     document.querySelector('.nav-container').appendChild(navOverlay);
 
+    const navClose = document.querySelector('.nav-close');
+
     // Central close function: collapses menu, overlay, all dropdowns, and restores scroll
     const closeMenu = () => {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
       navOverlay.classList.remove('active');
+      if (navClose) {
+        navClose.style.display = 'none';
+      }
       document.querySelectorAll('.nav-item.has-dropdown').forEach(item => item.classList.remove('active'));
       document.body.style.overflow = '';
     };
@@ -48,10 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = navMenu.classList.toggle('active');
       hamburger.classList.toggle('active', isOpen);
       navOverlay.classList.toggle('active', isOpen);
+      if (navClose) {
+        navClose.style.display = isOpen ? 'flex' : 'none';
+      }
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     navOverlay.addEventListener('click', closeMenu);
+
+    if (navClose) {
+      navClose.addEventListener('click', closeMenu);
+    }
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navMenu.classList.contains('active')) {
@@ -151,32 +163,58 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Handle Contact Form Submission
-  const contactForm = document.querySelector('.contact-form');
+  const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Show success message
-      const successMessage = document.createElement('div');
-      successMessage.className = 'form-success';
-      successMessage.innerHTML = `
-        <h3>Thank You!</h3>
-        <p>Your enquiry has been submitted. Our team will respond shortly.</p>
-      `;
-      successMessage.style.cssText = `
-        background-color: var(--color-bg-steel);
-        border: 1px solid var(--color-accent);
-        border-radius: 4px;
-        padding: 2rem;
-        text-align: center;
-        margin-top: 2rem;
-      `;
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
 
-      contactForm.innerHTML = '';
-      contactForm.appendChild(successMessage);
+      const formData = {
+        name: contactForm.querySelector('#name').value,
+        company: contactForm.querySelector('#company').value,
+        email: contactForm.querySelector('#email').value,
+        phone: contactForm.querySelector('#phone').value,
+        service: contactForm.querySelector('#service').value,
+        message: contactForm.querySelector('#message').value,
+      };
 
-      // Scroll to the message
-      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        if (res.ok) {
+          const successMessage = document.createElement('div');
+          successMessage.className = 'form-success';
+          successMessage.innerHTML = `
+            <h3>Thank You!</h3>
+            <p>Your enquiry has been submitted. Our team will respond shortly.</p>
+          `;
+          successMessage.style.cssText = `
+            background-color: var(--color-bg-steel);
+            border: 1px solid var(--color-accent);
+            border-radius: 4px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+          `;
+          contactForm.innerHTML = '';
+          contactForm.appendChild(successMessage);
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert('Something went wrong. Please try again or email us directly at Enquiries@cimmeriancrane.com');
+      }
     });
   }
 
