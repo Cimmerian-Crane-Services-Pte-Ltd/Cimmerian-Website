@@ -306,6 +306,37 @@ img {
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
+.nav-close {
+  display: none;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(26, 29, 36, 0.9);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  z-index: 1001;
+  transition: var(--transition-smooth);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.nav-close:hover,
+.nav-close:focus-visible {
+  background: rgba(0, 85, 255, 0.15);
+  border-color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+.nav-menu.active + .nav-close {
+  display: flex;
+}
+
 .hamburger:hover {
   border-color: rgba(226, 232, 240, 0.28);
   background-color: rgba(226, 232, 240, 0.04);
