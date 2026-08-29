@@ -162,32 +162,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }, stepTime);
   };
 
-  // Handle Contact Form Submission (via Formspree)
+  // Handle Contact Form Submission (via mailto: link)
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending...';
+      submitBtn.textContent = 'Opening email...';
       submitBtn.disabled = true;
 
-      try {
-        const formData = new FormData(contactForm);
-        const res = await fetch(contactForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
+      const formData = new FormData(contactForm);
+      const name = formData.get('name') || '';
+      const company = formData.get('company') || '';
+      const email = formData.get('email') || '';
+      const phone = formData.get('phone') || '';
+      const service = formData.get('service') || '';
+      const message = formData.get('message') || '';
 
-        if (!res.ok) throw new Error('Form submission failed');
+      const subject = encodeURIComponent(`Inquiry: ${service} — ${name} (${company})`);
+      const body = encodeURIComponent(
+        `Full Name: ${name}\n` +
+        `Company: ${company}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone}\n` +
+        `Service of Interest: ${service}\n\n` +
+        `Message:\n${message}`
+      );
 
+      window.location.href = `mailto:Enquiries@cimmeriancrane.com?subject=${subject}&body=${body}`;
+
+      // Show success message after a short delay
+      setTimeout(() => {
         const successMessage = document.createElement('div');
         successMessage.className = 'form-success';
         successMessage.innerHTML = `
           <h3>Thank You!</h3>
-          <p>Your enquiry has been submitted. Our team will respond shortly.</p>
+          <p>Your email client should have opened with your inquiry pre-filled. Please send the email to complete your submission. Our team will respond shortly.</p>
         `;
         successMessage.style.cssText = `
           background-color: var(--color-bg-steel);
@@ -200,12 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.innerHTML = '';
         contactForm.appendChild(successMessage);
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } catch (err) {
-        console.error('Form error:', err);
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        alert('Something went wrong. Please try again or email us directly at Enquiries@cimmeriancrane.com');
-      }
+      }, 1000);
     });
   }
 
