@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, stepTime);
   };
 
-  // Handle Contact Form Submission (via EmailJS)
+  // Handle Contact Form Submission (via Formspree)
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
@@ -173,20 +173,15 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
 
-      const formData = {
-        name: contactForm.querySelector('#name').value,
-        company: contactForm.querySelector('#company').value,
-        email: contactForm.querySelector('#email').value,
-        phone: contactForm.querySelector('#phone').value,
-        service: contactForm.querySelector('#service').value,
-        message: contactForm.querySelector('#message').value,
-      };
-
-      // TODO: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS values
-      // Service ID  → from https://www.emailjs.com/ → Email Services
-      // Template ID → from https://www.emailjs.com/ → Email Templates
       try {
-        const res = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData);
+        const formData = new FormData(contactForm);
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (!res.ok) throw new Error('Form submission failed');
 
         const successMessage = document.createElement('div');
         successMessage.className = 'form-success';
@@ -206,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.appendChild(successMessage);
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (err) {
-        console.error('EmailJS error:', err);
+        console.error('Form error:', err);
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         alert('Something went wrong. Please try again or email us directly at Enquiries@cimmeriancrane.com');

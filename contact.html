@@ -135,7 +135,7 @@
           </div>
 
           <!-- Contact Form -->
-          <form class="contact-form" id="contactForm" action="/api/contact" method="POST">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Send Us a Message</h3>
 
             <div class="form-group">
@@ -245,12 +245,7 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    // TODO: Replace with your EmailJS credentials from https://www.emailjs.com/
-    // 1. Sign up → 2. Add Email Service → 3. Create Email Template → 4. Get Public Key
-    emailjs.init('YOUR_PUBLIC_KEY');
-  </script>
+  <!-- Formspree: https://formspree.io/ — sign up, create a form, paste your endpoint URL above -->
   <script src="script.js"></script>
 </body>
 </html>
