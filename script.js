@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, stepTime);
   };
 
-  // Handle Contact Form Submission
+  // Handle Contact Form Submission (via EmailJS)
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
@@ -182,35 +182,31 @@ document.addEventListener('DOMContentLoaded', () => {
         message: contactForm.querySelector('#message').value,
       };
 
+      // TODO: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS values
+      // Service ID  → from https://www.emailjs.com/ → Email Services
+      // Template ID → from https://www.emailjs.com/ → Email Templates
       try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        });
+        const res = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData);
 
-        if (res.ok) {
-          const successMessage = document.createElement('div');
-          successMessage.className = 'form-success';
-          successMessage.innerHTML = `
-            <h3>Thank You!</h3>
-            <p>Your enquiry has been submitted. Our team will respond shortly.</p>
-          `;
-          successMessage.style.cssText = `
-            background-color: var(--color-bg-steel);
-            border: 1px solid var(--color-accent);
-            border-radius: 4px;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 2rem;
-          `;
-          contactForm.innerHTML = '';
-          contactForm.appendChild(successMessage);
-          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          throw new Error('Server error');
-        }
+        const successMessage = document.createElement('div');
+        successMessage.className = 'form-success';
+        successMessage.innerHTML = `
+          <h3>Thank You!</h3>
+          <p>Your enquiry has been submitted. Our team will respond shortly.</p>
+        `;
+        successMessage.style.cssText = `
+          background-color: var(--color-bg-steel);
+          border: 1px solid var(--color-accent);
+          border-radius: 4px;
+          padding: 2rem;
+          text-align: center;
+          margin-top: 2rem;
+        `;
+        contactForm.innerHTML = '';
+        contactForm.appendChild(successMessage);
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (err) {
+        console.error('EmailJS error:', err);
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         alert('Something went wrong. Please try again or email us directly at Enquiries@cimmeriancrane.com');
