@@ -162,57 +162,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }, stepTime);
   };
 
-  // Handle Contact Form Submission (via mailto: link)
+  // Contact form posts to Web3Forms; report the outcome in-page and keep the input on failure
   const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+  const formStatus = document.getElementById('formSuccess');
+  if (contactForm && formStatus) {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const button = contactForm.querySelector('button[type="submit"]');
+      const label = button.textContent;
+      button.textContent = 'Sending...';
+      button.disabled = true;
 
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Opening email...';
-      submitBtn.disabled = true;
+      let sent = false;
+      try {
+        const res = await fetch(contactForm.action, { method: 'POST', body: new FormData(contactForm) });
+        sent = res.ok;
+      } catch {
+        sent = false;
+      }
 
-      const formData = new FormData(contactForm);
-      const name = formData.get('name') || '';
-      const company = formData.get('company') || '';
-      const email = formData.get('email') || '';
-      const phone = formData.get('phone') || '';
-      const service = formData.get('service') || '';
-      const message = formData.get('message') || '';
+      // Unhide first so the live region announces the text change
+      formStatus.hidden = false;
+      formStatus.querySelector('h3').textContent = sent ? 'Thank You!' : 'Message Not Sent';
+      formStatus.querySelector('p').textContent = sent
+        ? 'Your inquiry has been sent to our team. We will respond within one business day.'
+        : 'We could not send your inquiry. Please try again, or email us at Enquiries@cimmeriancrane.com.';
+      formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      const subject = encodeURIComponent(`Inquiry: ${service} — ${name} (${company})`);
-      const body = encodeURIComponent(
-        `Full Name: ${name}\n` +
-        `Company: ${company}\n` +
-        `Email: ${email}\n` +
-        `Phone: ${phone}\n` +
-        `Service of Interest: ${service}\n\n` +
-        `Message:\n${message}`
-      );
-
-      window.location.href = `mailto:Enquiries@cimmeriancrane.com?subject=${subject}&body=${body}`;
-
-      // Show success message after a short delay
-      setTimeout(() => {
-        const successMessage = document.createElement('div');
-        successMessage.className = 'form-success';
-        successMessage.innerHTML = `
-          <h3>Thank You!</h3>
-          <p>Your email client should have opened with your inquiry pre-filled. Please send the email to complete your submission. Our team will respond shortly.</p>
-        `;
-        successMessage.style.cssText = `
-          background-color: var(--color-bg-steel);
-          border: 1px solid var(--color-accent);
-          border-radius: 4px;
-          padding: 2rem;
-          text-align: center;
-          margin-top: 2rem;
-        `;
-        contactForm.innerHTML = '';
-        contactForm.appendChild(successMessage);
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 1000);
+      if (sent) {
+        contactForm.remove();
+      } else {
+        button.textContent = label;
+        button.disabled = false;
+      }
     });
   }
 

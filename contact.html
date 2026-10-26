@@ -135,7 +135,9 @@
           </div>
 
           <!-- Contact Form -->
-          <form class="contact-form" id="contactForm" action="mailto:Enquiries@cimmeriancrane.com" method="POST">
+          <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="41bcbc08-0348-492e-b612-8896206dc03a">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none;">
             <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Send Us a Message</h3>
 
             <div class="form-group">
@@ -164,14 +166,14 @@
               <label for="service" class="form-label">Service of Interest *</label>
               <select id="service" name="service" class="form-select" required>
                 <option value="" disabled selected>Select a service...</option>
-                <option value="overhead-cranes">Overhead Travelling Cranes</option>
-                <option value="gantry-cranes">Gantry Cranes</option>
-                <option value="jib-cranes">Jib Cranes</option>
-                <option value="electric-hoists">Electric Chain Hoists</option>
-                <option value="wire-rope-hoists">Wire Rope Hoists</option>
-                <option value="custom-engineering">Custom Engineering Solutions</option>
-                <option value="maintenance">Maintenance & Inspection</option>
-                <option value="other">Other</option>
+                <option value="Overhead Travelling Cranes">Overhead Travelling Cranes</option>
+                <option value="Gantry Cranes">Gantry Cranes</option>
+                <option value="Jib Cranes">Jib Cranes</option>
+                <option value="Electric Chain Hoists">Electric Chain Hoists</option>
+                <option value="Wire Rope Hoists">Wire Rope Hoists</option>
+                <option value="Custom Engineering Solutions">Custom Engineering Solutions</option>
+                <option value="Maintenance & Inspection">Maintenance & Inspection</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
@@ -182,6 +184,12 @@
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
           </form>
+
+          <!-- Status panel shared by the success and failure states -->
+          <div class="form-success" id="formSuccess" role="status" hidden>
+            <h3>Thank You!</h3>
+            <p>Your inquiry has been sent to our team. We will respond within one business day.</p>
+          </div>
 
         </div>
       </div>
@@ -245,7 +253,7 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Contact form submits via mailto: to Enquiries@cimmeriancrane.com -->
+  <!-- Contact form posts to Web3Forms, which emails Enquiries@cimmeriancrane.com -->
   <script src="script.js"></script>
 </body>
 </html>
